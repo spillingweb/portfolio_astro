@@ -130,16 +130,13 @@ const SKILLS = skillsResult.data.skills.items ?? [];
         name="skills"
         wrapper={islands.skills.wrapper}
         params={{ lang }}
-        >{
-          SKILLS.map((s) => (
+        >
             <SkillsSection
               skills={skillsResult.data.skills}
               label={t.skills.label}
               heading={t.skills.heading}
               lang={lang}
             />
-          ))
-        }
       </TinaIsland>
   </section>
 
