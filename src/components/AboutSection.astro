@@ -1,0 +1,61 @@
+---
+import { tinaField } from "@tinacms/astro/tina-field";
+
+interface Props {
+  about: {
+    p1: string;
+    p2?: string | null;
+    p3?: string | null;
+    cta?: string | null;
+  };
+  photoAlt: string;
+}
+
+const { about, photoAlt } = Astro.props;
+---
+
+<div class="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
+  <!-- Photo placeholder -->
+  <div class="relative">
+    <div
+      class="aspect-[3/4] w-full max-w-sm mx-auto md:mx-0 bg-white/5 border border-white/10 rounded-sm flex flex-col items-center justify-center gap-4"
+      aria-label={photoAlt}
+    >
+      <div class="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-[#8B1FFF] rounded-tl-sm"></div>
+      <div class="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-[#FF3B6B] rounded-br-sm"></div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(255,255,255,0.2)">
+        <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
+        <circle cx="12" cy="13" r="3"/>
+      </svg>
+      <p class="font-mono text-[11px] uppercase tracking-[0.18em] text-white/25">{photoAlt}</p>
+    </div>
+    <div class="absolute -right-3 top-8 bottom-8 w-1.5 bg-[#8B1FFF] hidden md:block rounded-full"></div>
+  </div>
+
+  <!-- Editable text -->
+  <div class="space-y-6 md:pt-4">
+    <p class="text-white/75 leading-relaxed text-lg" data-tina-field={tinaField(about, "p1")}>
+      {about.p1}
+    </p>
+    {about.p2 && (
+      <p class="text-white/60 leading-relaxed" data-tina-field={tinaField(about, "p2")}>
+        {about.p2}
+      </p>
+    )}
+    {about.p3 && (
+      <p class="text-white/60 leading-relaxed" data-tina-field={tinaField(about, "p3")}>
+        {about.p3}
+      </p>
+    )}
+    <div class="pt-4">
+      <a
+        href="#contact"
+        class="inline-flex items-center gap-2 bg-[#8B1FFF] text-white px-6 py-3.5 font-semibold rounded-sm hover:bg-[#7A1AE8] transition-colors"
+        data-tina-field={tinaField(about, "cta")}
+      >
+        {about.cta}
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</div>

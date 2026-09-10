@@ -1,0 +1,41 @@
+{
+  "items": [
+    { "name": "React",            "group": 0 },
+    { "name": "TypeScript",       "group": 0 },
+    { "name": "Next.js",          "group": 0 },
+    { "name": "TanStack Start",   "group": 0 },
+    { "name": "TanStack Query",   "group": 0 },
+    { "name": "TanStack Router",  "group": 0 },
+    { "name": "Tailwind CSS",     "group": 0 },
+    { "name": "Node.js",          "group": 1 },
+    { "name": "GraphQL",          "group": 1 },
+    { "name": "PostgreSQL",       "group": 1 },
+    { "name": "Supabase",         "group": 1 },
+    { "name": "REST APIs",        "group": 1 },
+    { "name": "Docker",           "group": 1 },
+    { "name": "Git",              "group": 1 },
+    { "name": "Leaflet",          "group": 2 },
+    { "name": "Framer Motion",    "group": 2 },
+    { "name": "Figma",            "group": 2 },
+    { "name": "Jest / Vitest",    "group": 2 },
+    { "name": "Storybook",        "group": 2 },
+    { "name": "Vercel / Netlify", "group": 2 }
+  ],
+  "services": [
+    {
+      "en": { "title": "Frontend Engineering", "desc": "React, Next.js, TanStack. Component architecture, state management, performance tuning, and accessibility — built to last." },
+      "es": { "title": "Desarrollo Frontend",  "desc": "React, Next.js, TanStack. Arquitectura de componentes, gestión de estado, optimización de rendimiento y accesibilidad — construido para durar." },
+      "no": { "title": "Frontend-utvikling",   "desc": "React, Next.js, TanStack. Komponentarkitektur, tilstandshåndtering, ytelsesoptimalisering og universell utforming — bygget for å vare." }
+    },
+    {
+      "en": { "title": "Full-Stack Development", "desc": "Node.js, GraphQL, PostgreSQL, Supabase. API design, auth systems, database modeling, and deployment pipelines." },
+      "es": { "title": "Desarrollo Full-Stack",  "desc": "Node.js, GraphQL, PostgreSQL, Supabase. Diseño de APIs, sistemas de autenticación, modelado de bases de datos y pipelines de despliegue." },
+      "no": { "title": "Full-Stack-utvikling",   "desc": "Node.js, GraphQL, PostgreSQL, Supabase. API-design, autentiseringssystemer, databasemodellering og utrullingspipelines." }
+    },
+    {
+      "en": { "title": "UI / UX Implementation", "desc": "Pixel-perfect Figma-to-production. Animation, responsive design, interactive maps with Leaflet, and design systems." },
+      "es": { "title": "Implementación UI / UX", "desc": "De Figma a producción con precisión píxel. Animaciones, diseño responsive, mapas interactivos con Leaflet y sistemas de diseño." },
+      "no": { "title": "UI / UX-implementering", "desc": "Pikselpresis fra Figma til produksjon. Animasjoner, responsivt design, interaktive kart med Leaflet og designsystemer." }
+    }
+  ]
+}

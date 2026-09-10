@@ -1,0 +1,12 @@
+{
+  "title": "Nocturne",
+  "year": "2023",
+  "order": 3,
+  "accentColor": "#00B896",
+  "tags": ["React", "Leaflet", "Node.js", "PostgreSQL"],
+  "descriptions": {
+    "en": "Interactive city nightlife map for Oslo. Users pin venues, share reviews, and discover events happening within the next 48 hours.",
+    "es": "Mapa interactivo de vida nocturna para Oslo. Los usuarios marcan locales, comparten reseñas y descubren eventos en las próximas 48 horas.",
+    "no": "Interaktivt kart over utelivet i Oslo. Brukere merker steder, deler anmeldelser og oppdager arrangementer de neste 48 timene."
+  }
+}

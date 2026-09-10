@@ -1,0 +1,12 @@
+{
+  "title": "Threadly",
+  "year": "2024",
+  "order": 2,
+  "accentColor": "#8B1FFF",
+  "tags": ["Next.js", "TanStack Query", "Supabase", "TypeScript"],
+  "descriptions": {
+    "en": "Community forum platform built for niche creator communities. Threaded discussions, real-time notifications, and a moderation dashboard.",
+    "es": "Plataforma de foros comunitarios para comunidades de creadores de nicho. Discusiones en hilo, notificaciones en tiempo real y panel de moderación.",
+    "no": "Fellesskapsforumplattform bygget for nisjefellesskap. Trådede diskusjoner, sanntidsvarslinger og et moderasjonsdashboard."
+  }
+}

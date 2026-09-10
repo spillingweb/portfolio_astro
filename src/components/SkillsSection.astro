@@ -1,0 +1,65 @@
+---
+import { tinaField } from "@tinacms/astro/tina-field";
+
+const SKILL_COLORS = [
+  "border-[#8B1FFF]/30 text-[#8B1FFF] bg-[#8B1FFF]/10",
+  "border-[#FF3B6B]/30 text-[#FF3B6B] bg-[#FF3B6B]/10",
+  "border-foreground/20 text-foreground bg-foreground/5",
+];
+
+const SERVICE_BARS = ["#FF3B6B", "#8B1FFF", "#00B896"];
+
+interface Props {
+  skills: {
+    items?: ({ name: string; group?: number | null } | null)[] | null;
+    services?: ({
+      en?: { title?: string | null; desc?: string | null } | null;
+      es?: { title?: string | null; desc?: string | null } | null;
+      no?: { title?: string | null; desc?: string | null } | null;
+    } | null)[] | null;
+  };
+  label: string;
+  heading: string;
+  lang: "en" | "es" | "no";
+}
+
+const { skills, label, heading, lang } = Astro.props;
+const items = (skills.items ?? []).filter(
+  (s): s is { name: string; group?: number | null } => Boolean(s)
+);
+const services = (skills.services ?? []).filter(Boolean);
+---
+
+<p class="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground mb-3">{label}</p>
+<h2 class="font-heading font-black leading-[0.9] tracking-tight mb-16" style="font-size: clamp(2rem, 5vw, 4rem)">
+  {heading}
+</h2>
+
+<div class="flex flex-wrap gap-2.5 mb-24">
+  {items.map((s) => (
+    <span
+      class={`border font-mono text-xs px-3.5 py-1.5 rounded-sm font-medium ${SKILL_COLORS[s.group ?? 0]}`}
+      data-tina-field={tinaField(s, "name")}
+    >
+      {s.name}
+    </span>
+  ))}
+</div>
+
+<div class="grid md:grid-cols-3 gap-5">
+  {services.map((svc, i) => {
+    const loc = svc?.[lang] ?? svc?.en;
+    return (
+      <div class="border border-border bg-card p-8 rounded-sm hover:border-foreground/25 hover:shadow-md transition-all duration-300 relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1" style={`background: ${SERVICE_BARS[i]}`}></div>
+        <div class="w-11 h-11 flex items-center justify-center mb-6 rounded-sm" style={`background: ${SERVICE_BARS[i]}18`}>
+          {i === 0 && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style={`color: ${SERVICE_BARS[i]}`}><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>}
+          {i === 1 && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style={`color: ${SERVICE_BARS[i]}`}><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>}
+          {i === 2 && <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style={`color: ${SERVICE_BARS[i]}`}><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>}
+        </div>
+        <h3 class="font-heading font-bold text-xl mb-3" data-tina-field={tinaField(loc, "title")}>{loc?.title}</h3>
+        <p class="text-sm text-muted-foreground leading-relaxed" data-tina-field={tinaField(loc, "desc")}>{loc?.desc}</p>
+      </div>
+    );
+  })}
+</div>

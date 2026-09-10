@@ -1,0 +1,12 @@
+{
+  "title": "Luminary Dashboard",
+  "year": "2024",
+  "order": 1,
+  "accentColor": "#FF3B6B",
+  "tags": ["React", "TypeScript", "Recharts", "Node.js"],
+  "descriptions": {
+    "en": "Real-time data viz platform for renewable energy startups. Monitors power output across 47 solar installations with sub-100ms refresh rates.",
+    "es": "Plataforma de visualización en tiempo real para startups de energía renovable. Monitorea la producción de 47 instalaciones solares con actualizaciones de menos de 100ms.",
+    "no": "Sanntids datavisualiseringsplattform for startups innen fornybar energi. Overvåker kraftproduksjon på tvers av 47 solinstallasjoner med oppdateringer under 100ms."
+  }
+}

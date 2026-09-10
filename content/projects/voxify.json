@@ -1,0 +1,12 @@
+{
+  "title": "Voxify",
+  "year": "2023",
+  "order": 4,
+  "accentColor": "#F59A00",
+  "tags": ["React", "TanStack Router", "GraphQL", "Framer Motion"],
+  "descriptions": {
+    "en": "Podcast discovery app with visual waveform previews. Built a custom GraphQL layer over three separate podcast directory APIs.",
+    "es": "Aplicación de descubrimiento de podcasts con vistas previas visuales de forma de onda. Capa GraphQL personalizada sobre tres APIs de directorios de podcasts.",
+    "no": "Podkastoppdagelsesapp med visuelle bølgeformsforhåndsvisninger. Bygget et tilpasset GraphQL-lag over tre separate podkastkataloger."
+  }
+}
