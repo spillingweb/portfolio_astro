@@ -114,7 +114,7 @@ export default function FloatingMenu({
             : "circle(0% at calc(100% - 3.5rem) calc(100% - 3.5rem))",
         }}
       >
-        <div className="flex items-center justify-between px-6 md:px-12 py-5 border-b border-white/10 flex-shrink-0">
+        <div className="flex items-center justify-between px-6 md:px-12 py-5 border-b border-white/10 shrink-0">
           <div>
             <p className="font-heading font-black text-base text-white tracking-tight">
               Spilling Web
@@ -162,7 +162,7 @@ export default function FloatingMenu({
               className="flex-1 flex items-center justify-between px-6 md:px-12 group"
             >
               <div className="flex items-baseline gap-6 md:gap-10">
-                <span className="font-mono text-xs text-white/20 w-6 flex-shrink-0">
+                <span className="font-mono text-xs text-white/20 w-6 shrink-0">
                   0{i + 1}
                 </span>
                 <span
@@ -186,7 +186,7 @@ export default function FloatingMenu({
               </div>
               <ArrowUpRight
                 size={24}
-                className="flex-shrink-0 text-white/20 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-200"
+                className="shrink-0 text-white/20 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-200"
               />
             </a>
           ))}

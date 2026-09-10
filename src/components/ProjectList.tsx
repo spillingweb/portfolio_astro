@@ -60,7 +60,7 @@ export default function ProjectList({ edges, lang }: Props) {
             />
             <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-4 py-7 md:py-8">
               <span
-                className="font-heading font-black leading-none w-24 flex-shrink-0 transition-colors duration-300"
+                className="font-heading font-black leading-none w-24 shrink-0 transition-colors duration-300"
                 style={{
                   fontSize: "clamp(2rem,4vw,3.5rem)",
                   color: isTouch
@@ -91,7 +91,7 @@ export default function ProjectList({ edges, lang }: Props) {
                   {description}
                 </p>
               </div>
-              <div className="flex flex-col items-start md:items-end gap-3 flex-shrink-0 md:w-56">
+              <div className="flex flex-col items-start md:items-end gap-3 shrink-0 md:w-56">
                 <div className="flex flex-wrap gap-1.5 md:justify-end">
                   {(p.tags ?? []).map((tag: string) => (
                     <span

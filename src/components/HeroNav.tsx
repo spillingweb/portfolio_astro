@@ -32,12 +32,12 @@ export default function HeroNav({ navItems, role, available, langUrls, currentLa
 
   return (
     <section className="min-h-screen flex flex-col border-b border-border">
-      <header className="flex items-center justify-between px-6 md:px-12 py-5 border-b border-border flex-shrink-0 gap-4">
+      <header className="flex items-center justify-between px-6 md:px-12 py-5 border-b border-border shrink-0 gap-4">
         <div>
           <p className="font-heading font-black text-base tracking-tight">Spilling Web</p>
           <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-[0.18em] mt-0.5">{role}</p>
         </div>
-        <div className="flex items-center gap-5 flex-shrink-0">
+        <div className="flex items-center gap-5 shrink-0">
           <div className="flex items-center gap-1">
             {LANGS.map((l, i) => (
               <span key={l} className="flex items-center gap-1">
@@ -88,7 +88,7 @@ export default function HeroNav({ navItems, role, available, langUrls, currentLa
             <div className="relative z-10 flex items-center justify-between w-full gap-4">
               <div className="flex items-baseline gap-6 md:gap-10">
                 <span
-                  className="font-mono text-xs md:text-sm transition-colors duration-300 flex-shrink-0 w-6"
+                  className="font-mono text-xs md:text-sm transition-colors duration-300 shrink-0 w-6"
                   style={{
                     color: isTouch
                       ? item.color
@@ -111,7 +111,7 @@ export default function HeroNav({ navItems, role, available, langUrls, currentLa
               </div>
               <ArrowUpRight
                 size={28}
-                className="flex-shrink-0 transition-all duration-300"
+                className="shrink-0 transition-all duration-300"
                 style={{
                   color: isTouch
                     ? item.color

@@ -29,7 +29,7 @@ const { about, photoAlt } = Astro.props;
       </svg>
       <p class="font-mono text-[11px] uppercase tracking-[0.18em] text-white/25">{photoAlt}</p>
     </div>
-    <div class="absolute -right-3 top-8 bottom-8 w-1.5 bg-[#8B1FFF] hidden md:block rounded-full"></div>
+    <div class="absolute -right-3 top-8 bottom-8 w-1.5 bg-primary hidden md:block rounded-full"></div>
   </div>
 
   <!-- Editable text -->
@@ -50,7 +50,7 @@ const { about, photoAlt } = Astro.props;
     <div class="pt-4">
       <a
         href="#contact"
-        class="inline-flex items-center gap-2 bg-[#8B1FFF] text-white px-6 py-3.5 font-semibold rounded-sm hover:bg-[#7A1AE8] transition-colors"
+        class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3.5 font-semibold rounded-sm hover:bg-[#7A1AE8] transition-colors"
         data-tina-field={tinaField(about, "cta")}
       >
         {about.cta}
