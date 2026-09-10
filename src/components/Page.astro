@@ -126,19 +126,6 @@ const SKILLS = skillsResult.data.skills.items ?? [];
 
   <!-- Skills section content -->
   <section id="skills" class="py-28 max-w-7xl mx-auto px-6 md:px-12">
-    <p
-      class="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground mb-3"
-    >
-      {t.skills.label}
-    </p>
-    <h2
-      class="font-heading font-black leading-[0.9] tracking-tight mb-16"
-      style="font-size: clamp(2rem, 5vw, 4rem)"
-    >
-      {t.skills.heading}
-    </h2>
-
-    <div class="flex flex-wrap gap-2.5 mb-24">
       <TinaIsland
         name="skills"
         wrapper={islands.skills.wrapper}
@@ -154,7 +141,6 @@ const SKILLS = skillsResult.data.skills.items ?? [];
           ))
         }
       </TinaIsland>
-    </div>
   </section>
 
   <!-- CONTACT -->
