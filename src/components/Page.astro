@@ -20,9 +20,9 @@ const t = T[lang];
 const langUrls = { en: "/en", es: "/es", no: "/no" };
 
 const NAV_COLORS = [
-  { color: "#FF3B6B", textColor: "white", href: "#work" },
+  { color: "var(--color-pink)", textColor: "white", href: "#work" },
   { color: "#F59A00", textColor: "#111118", href: "#about" },
-  { color: "#00B896", textColor: "#111118", href: "#skills" },
+  { color: "var(--color-accent)", textColor: "#111118", href: "#skills" },
   { color: "#1A0A2E", textColor: "white", href: "#contact" },
 ];
 
@@ -51,7 +51,7 @@ const SKILLS = skillsResult.data.skills.items ?? [];
   />
 
   <div class="grid grid-cols-3 h-1.5">
-    <div class="bg-[#FF3B6B]"></div>
+    <div class="bg-pink"></div>
     <div class="bg-primary"></div>
     <div class="bg-accent"></div>
   </div>
@@ -126,39 +126,16 @@ const SKILLS = skillsResult.data.skills.items ?? [];
 
   <!-- Skills section content -->
   <section id="skills" class="py-28 max-w-7xl mx-auto px-6 md:px-12">
-    <p
-      class="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground mb-3"
-    >
-      {t.skills.label}
-    </p>
-    <h2
-      class="font-heading font-black leading-[0.9] tracking-tight mb-16"
-      style="font-size: clamp(2rem, 5vw, 4rem)"
-    >
-      {t.skills.heading}
-    </h2>
-
-    <div class="flex flex-wrap gap-2.5 mb-24">
-      <TinaIsland
-        name="skills"
-        wrapper={islands.skills.wrapper}
-        params={{ lang }}
-        >{
-          SKILLS.map((s) => (
-            <SkillsSection
-              skills={skillsResult.data.skills}
-              label={t.skills.label}
-              heading={t.skills.heading}
-              lang={lang}
-            />
-          ))
-        }
-      </TinaIsland>
-    </div>
+    <SkillsSection
+      skills={skillsResult.data.skills}
+      label={t.skills.label}
+      heading={t.skills.heading}
+      lang={lang}
+    />
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="py-28 bg-[#FF3B6B]">
+  <section id="contact" class="py-28 bg-pink">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
       <div class="grid md:grid-cols-2 gap-16 items-center">
         <div>
@@ -321,7 +298,7 @@ const SKILLS = skillsResult.data.skills.items ?? [];
     >
       <p class="font-heading font-bold text-sm">{settings.studioName}</p>
       <p class="font-mono text-[11px] text-muted-foreground text-center">
-        © 2025 {settings.studioName}. {t.footer}
+        © 2026 {settings.studioName}. {t.footer}
       </p>
       <div class="flex items-center gap-5">
         <div class="flex items-center gap-1">

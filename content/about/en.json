@@ -1,7 +1,7 @@
 {
   "lang": "en",
-  "p1": "I build web experiences that feel fast, look intentional, and hold up under pressure. Based in Norway, working across time zones.",
-  "p2": "My stack leans React — TanStack Query and Router for data-heavy apps, Leaflet when geography matters, Supabase when I need a backend yesterday. I care about the gap between design and code.",
-  "p3": "Open to new projects, especially with early-stage teams who value craft over checklists.",
-  "cta": "Let's talk"
+  "p1": "I’m a Norwegian web developer living in Ecuador, with a background in environmental science and a strong interest in building products that are useful, accessible, and easy to trust.",
+  "p2": "My path into tech started in environmental technology, where I built a GIS-based web app for emissions monitoring and reporting. Since then, I’ve worked on business systems, client projects, and full-stack product work that combines strong UX with practical engineering.",
+  "p3": "I care about interfaces that feel clear, code that is easy to maintain, and applications that are ready for real production use. I’m now looking for remote or freelance work where I can deliver full-stack solutions that are fast, reliable, and genuinely valuable.",
+  "cta": "Let’s talk"
 }

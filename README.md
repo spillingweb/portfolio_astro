@@ -2,7 +2,7 @@
 
 Personal portfolio for Spilling Web, a React web development studio. Built with Astro 5, React, Tailwind CSS v4, and TinaCMS for visual content editing.
 
----
+
 
 ## Tech Stack
 
@@ -15,7 +15,7 @@ Personal portfolio for Spilling Web, a React web development studio. Built with 
 | Deployment | [Vercel](https://vercel.com) |
 | i18n | Astro built-in i18n routing (EN / ES / NO) |
 
----
+
 
 ## Getting Started
 
@@ -26,31 +26,31 @@ Personal portfolio for Spilling Web, a React web development studio. Built with 
 
 ### Install dependencies
 
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 ### Environment variables
 
 Create a `.env` file in the project root:
 
-\`\`\`
+```
 TINA_CLIENT_ID=your-tina-client-id
 TINA_TOKEN=your-tina-token
 GITHUB_BRANCH=main
-\`\`\`
+```
 
 Get these from your project on [app.tina.io](https://app.tina.io).
 
 ### Run the dev server
 
-\`\`\`bash
+```bash
 npm run dev
-\`\`\`
+```
 
 This starts both the Astro dev server and the TinaCMS local server simultaneously. The site is available at `http://localhost:4321` and the CMS admin at `http://localhost:4321/admin`.
 
----
+
 
 ## Content Editing
 
@@ -66,7 +66,7 @@ Navigate to `https://your-domain.com/admin` and log in with your Tina Cloud acco
 
 ### Content structure
 
-\`\`\`
+```
 content/
 ├── settings.json          # Studio name, email, social URLs, availability
 ├── skills.json            # Skill tags and service card copy (all languages)
@@ -79,7 +79,7 @@ content/
     ├── en.json
     ├── es.json
     └── no.json
-\`\`\`
+```
 
 ### Editable fields
 
@@ -91,11 +91,11 @@ content/
 | Services | Service card titles and descriptions (per language) |
 | Settings | Studio name, email, GitHub URL, LinkedIn URL, availability status |
 
----
+
 
 ## Project Structure
 
-\`\`\`
+```
 src/
 ├── components/
 │   ├── Page.astro              # Main page template
@@ -122,9 +122,8 @@ src/
 │   └── skills.ts               # Tailwind colour tokens for skill groups
 └── styles/
     └── global.css              # Tailwind v4 theme tokens + Google Fonts
-\`\`\`
+```
 
----
 
 ## Internationalisation
 
@@ -138,7 +137,7 @@ The site is available in three languages with URL-based routing:
 
 UI strings (nav labels, section headings, availability text) live in `src/i18n/translations.ts`. Editorial content (about text, project descriptions, service cards) is stored per language in the CMS content files.
 
----
+
 
 ## Deployment
 
@@ -148,23 +147,23 @@ The project is deployed on Vercel. Push to `main` to trigger a redeploy.
 
 Set these in your Vercel project settings under **Environment Variables**:
 
-\`\`\`
+```
 TINA_CLIENT_ID
 TINA_TOKEN
 GITHUB_BRANCH
-\`\`\`
+```
 
 ### Build command
 
-\`\`\`bash
+```bash
 npm run build
-\`\`\`
+```
 
 ### Output directory
 
 `dist/` (handled automatically by the Vercel adapter)
 
----
+
 
 ## Design
 

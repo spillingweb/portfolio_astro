@@ -1,41 +1,75 @@
 {
   "items": [
-    { "name": "React",            "group": 0 },
-    { "name": "TypeScript",       "group": 0 },
-    { "name": "Next.js",          "group": 0 },
-    { "name": "TanStack Start",   "group": 0 },
-    { "name": "TanStack Query",   "group": 0 },
-    { "name": "TanStack Router",  "group": 0 },
-    { "name": "Tailwind CSS",     "group": 0 },
-    { "name": "Node.js",          "group": 1 },
-    { "name": "GraphQL",          "group": 1 },
-    { "name": "PostgreSQL",       "group": 1 },
-    { "name": "Supabase",         "group": 1 },
-    { "name": "REST APIs",        "group": 1 },
-    { "name": "Docker",           "group": 1 },
-    { "name": "Git",              "group": 1 },
-    { "name": "Leaflet",          "group": 2 },
-    { "name": "Framer Motion",    "group": 2 },
-    { "name": "Figma",            "group": 2 },
-    { "name": "Jest / Vitest",    "group": 2 },
-    { "name": "Storybook",        "group": 2 },
-    { "name": "Vercel / Netlify", "group": 2 }
+    { "name": "React", "group": 0 },
+    { "name": "TypeScript", "group": 0 },
+    { "name": "TanStack Ecosystem", "group": 0 },
+    { "name": "Astro", "group": 0 },
+    { "name": "Leaflet", "group": 0 },
+    { "name": "Turf.js", "group": 0 },
+    { "name": "CSS Modules", "group": 0 },
+    { "name": "Tailwind CSS", "group": 0 },
+    { "name": "Laravel", "group": 1 },
+    { "name": "Inertia.js", "group": 1 },
+    { "name": "PHP", "group": 1 },
+    { "name": "PostgreSQL", "group": 1 },
+    { "name": "PostGIS", "group": 1 },
+    { "name": "REST APIs", "group": 1 },
+    { "name": "Azure AD / Entra ID", "group": 1 },
+    { "name": "Git", "group": 2 },
+    { "name": "GitHub", "group": 2 },
+    { "name": "GitHub Actions", "group": 2 },
+    { "name": "GitHub Copilot", "group": 2 },
+    { "name": "VS Code", "group": 2 },
+    { "name": "Vite", "group": 2 },
+    { "name": "npm", "group": 2 },
+    { "name": "Jira", "group": 2 },
+    { "name": "Docker", "group": 2 },
+    { "name": "TinaCMS", "group": 2 },
+    { "name": "Figma", "group": 2 },
+    { "name": "UI / UX", "group": 2 }
   ],
   "services": [
     {
-      "en": { "title": "Frontend Engineering", "desc": "React, Next.js, TanStack. Component architecture, state management, performance tuning, and accessibility — built to last." },
-      "es": { "title": "Desarrollo Frontend",  "desc": "React, Next.js, TanStack. Arquitectura de componentes, gestión de estado, optimización de rendimiento y accesibilidad — construido para durar." },
-      "no": { "title": "Frontend-utvikling",   "desc": "React, Next.js, TanStack. Komponentarkitektur, tilstandshåndtering, ytelsesoptimalisering og universell utforming — bygget for å vare." }
+      "en": {
+        "title": "Frontend",
+        "desc": "Modern, user-focused interfaces for web apps and interactive web maps, built with React, TypeScript, Astro, and the TanStack ecosystem. I care about clean architecture, responsive layouts, solid performance, and UX that feels effortless."
+      },
+      "es": {
+        "title": "Frontend",
+        "desc": "Interfaces modernas y centradas en el usuario para aplicaciones web y mapas interactivos, construidas con React, TypeScript, Astro y el ecosistema TanStack. Me interesa la arquitectura limpia, layouts responsivos, buen rendimiento y una UX que se sienta natural."
+      },
+      "no": {
+        "title": "Frontend",
+        "desc": "Moderne, brukerorienterte grensesnitt for webapplikasjoner og interaktive webkart, bygget med React, TypeScript, Astro og TanStack-økosystemet. Jeg fokuserer på ren arkitektur, responsivt design, god ytelse og UX som føles naturlig."
+      }
     },
     {
-      "en": { "title": "Full-Stack Development", "desc": "Node.js, GraphQL, PostgreSQL, Supabase. API design, auth systems, database modeling, and deployment pipelines." },
-      "es": { "title": "Desarrollo Full-Stack",  "desc": "Node.js, GraphQL, PostgreSQL, Supabase. Diseño de APIs, sistemas de autenticación, modelado de bases de datos y pipelines de despliegue." },
-      "no": { "title": "Full-Stack-utvikling",   "desc": "Node.js, GraphQL, PostgreSQL, Supabase. API-design, autentiseringssystemer, databasemodellering og utrullingspipelines." }
+      "en": {
+        "title": "Backend",
+        "desc": "Practical full-stack engineering for business logic, data flows, and secure application workflows. I build reliable APIs, connect the frontend to real systems, and keep production features maintainable and stable."
+      },
+      "es": {
+        "title": "Backend",
+        "desc": "Ingeniería full-stack práctica para lógica de negocio, flujo de datos y flujos seguros de la aplicación. Construyo APIs confiables, conecto el frontend con sistemas reales y mantengo funciones de producción estables y mantenibles."
+      },
+      "no": {
+        "title": "Backend",
+        "desc": "Praktisk full-stack-utvikling for forretningslogikk, dataflyter og sikre applikasjonsflyter. Jeg bygger pålitelige API-er, kobler frontend til reelle systemer og holder produksjonsfunksjoner vedlikeholdbare og stabile."
+      }
     },
     {
-      "en": { "title": "UI / UX Implementation", "desc": "Pixel-perfect Figma-to-production. Animation, responsive design, interactive maps with Leaflet, and design systems." },
-      "es": { "title": "Implementación UI / UX", "desc": "De Figma a producción con precisión píxel. Animaciones, diseño responsive, mapas interactivos con Leaflet y sistemas de diseño." },
-      "no": { "title": "UI / UX-implementering", "desc": "Pikselpresis fra Figma til produksjon. Animasjoner, responsivt design, interaktive kart med Leaflet og designsystemer." }
+      "en": {
+        "title": "Tools",
+        "desc": "A modern workflow built for shipping efficiently: version control, automation, collaboration, and content tooling that helps keep projects moving without sacrificing quality."
+      },
+      "es": {
+        "title": "Herramientas",
+        "desc": "Un flujo de trabajo moderno pensado para entregar con eficiencia: control de versiones, automatización, colaboración y herramientas de contenido que mantienen los proyectos avanzando sin sacrificar calidad."
+      },
+      "no": {
+        "title": "Verktøy",
+        "desc": "En moderne arbeidsflyt bygget for effektiv levering: versjonskontroll, automatisering, samarbeid og innholdsverktøy som holder prosjekter i fart uten å gå på bekostning av kvalitet."
+      }
     }
   ]
 }

@@ -3,7 +3,9 @@ import { ArrowRight } from "lucide-react";
 import { tinaField } from "tinacms/dist/react";
 import type { ProjectConnectionQuery } from "../../tina/__generated__/types";
 
-type Edge = NonNullable<ProjectConnectionQuery["projectConnection"]["edges"]>[number];
+type Edge = NonNullable<
+  ProjectConnectionQuery["projectConnection"]["edges"]
+>[number];
 
 interface Props {
   edges: ProjectConnectionQuery["projectConnection"]["edges"];
@@ -45,7 +47,7 @@ export default function ProjectList({ edges, lang }: Props) {
         return (
           <div
             key={p.title}
-            className="relative border-b border-border cursor-pointer overflow-hidden"
+            className="relative border-b border-border cursor-pointer overflow-hidden md:px-4"
             onMouseEnter={() => setHoveredProject(i)}
             onMouseLeave={() => setHoveredProject(null)}
           >

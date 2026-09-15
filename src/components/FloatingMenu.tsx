@@ -174,7 +174,9 @@ export default function FloatingMenu({
                     style={
                       {
                         WebkitTextStroke: `2px ${
-                          item.color === "#1A0A2E" ? "#FF3B6B" : item.color
+                          item.color === "#1A0A2E"
+                            ? "var(--color-pink)"
+                            : item.color
                         }`,
                         color: "inherit",
                       } as React.CSSProperties
