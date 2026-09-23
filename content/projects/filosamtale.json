@@ -1,0 +1,28 @@
+{
+  "url": "https://filosamtale.no",
+  "title": "Filosamtale",
+  "year": "2026",
+  "order": 3,
+  "accentColor": "#8B1FFF",
+  "tags": [
+    "React 19",
+    "TypeScript",
+    "SEO",
+    "Tailwind 4",
+    "TanStack Start",
+    "Shadcn UI",
+    "TinaCMS",
+    "Brevo",
+    "Vercel",
+    "Custom domain",
+    "Github Copilot"
+  ],
+  "image": "/uploads/SkjermbildeFilosamtale.png",
+  "githubUrl": "https://github.com/spillingweb/filosamtale",
+  "liveUrl": "https://filosamtale.no",
+  "descriptions": {
+    "en": "A refined web platform tailored for philosophical counseling, workshops, and reflective writing. Designed with a focus on typography and intuitive navigation, it enables easy event and blog management while providing a secure, GDPR-compliant contact system powered by EU-based Brevo to handle sensitive client inquiries. Light/dark mode functionality.",
+    "es": "Plataforma web enfocada en la orientación filosófica, talleres y artículos de reflexión. Ofrece un diseño enfocado en la legibilidad, gestión autónoma de eventos y blogs, y un flujo de mensajes seguro mediante la infraestructura europea de Brevo, que protege la privacidad de los clientes bajo la normativa GDPR. Functionalidad de modo oscuro / modo claro.",
+    "no": "En stilren plattform for filosofisk veiledning, samtalegrupper og fagartikler. Nettsiden har fokus på tilgjengelighet og enkel navigasjon, og gir eieren full kontroll over publisering av arrangementer samt trygg mottak av klienthenvendelser via Brevos GDPR-kompatible EU-infrastruktur. Har lys / mørk modus."
+  }
+}

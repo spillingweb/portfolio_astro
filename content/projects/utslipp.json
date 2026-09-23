@@ -1,0 +1,26 @@
+{
+  "title": "Utslipp app",
+  "year": "2025",
+  "order": 4,
+  "accentColor": "#00B896",
+  "tags": [
+    "React 19",
+    "Laravel 12",
+    "Inertia.js",
+    "PostgreSQL",
+    "PostGIS",
+    "CSS modules",
+    "Azure AD / Entra ID",
+    "Leaflet",
+    "Turf.js"
+  ],
+  "image": "",
+  "videoUrl": "/uploads/Utslipp-App.webm",
+  "githubUrl": "https://github.com/spillingweb/utslipp-app/",
+  "isPrivate": true,
+  "descriptions": {
+    "en": "A secure, enterprise-grade geospatial web application made for a Norwegian municipality to monitor, analyze, and report regional environmental emissions. Built as a solo full-stack project, it combines a high-performance Laravel 12 backend with a React 19 frontend to handle complex spatial calculations while adhering to strict municipal data privacy standards. Key features include a custom WMS proxy for secure municipal data access, native PostGIS spatial indexing for ultra-fast location queries, and a modular UI architecture using CSS Modules.",
+    "es": "Una aplicación web geoespacial segura y de nivel empresarial hecho para un municipio noruego para que monitoricen, analicen e informen sobre las emisiones ambientales regionales. Desarrollada como un proyecto full-stack en solitario, combina un backend de alto rendimiento en Laravel 12 con un frontend en React 19 para gestionar cálculos espaciales complejos cumpliendo estrictos estándares de privacidad de datos municipales. Sus características principales incluyen un proxy WMS personalizado para acceso seguro a datos municipales, indexación espacial nativa PostGIS para consultas de ubicación ultrarrápidas y una arquitectura de interfaz modular con CSS Modules.",
+    "no": "En sikker, bedriftsklasse geospatial webapplikasjon laget på oppdrag fra Ringerike kommune for å overvåke, analysere og rapportere regionale miljøutslipp. Bygget som et solo full-stack prosjekt, kombinerer den en høytytende Laravel 12 backend med en React 19 frontend for å håndtere komplekse romlige beregninger samtidig som strenge kommunale personvernstandarder overholdes. Nøkkelfunksjoner inkluderer en tilpasset WMS-proxy for sikker tilgang til kommunale data, native PostGIS romlig indeksering for ultraraske stedssøk, og en modulær UI-arkitektur ved bruk av CSS Modules."
+  }
+}

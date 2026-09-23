@@ -1,12 +1,27 @@
 {
-  "title": "Voxify",
-  "year": "2023",
-  "order": 4,
+  "title": "Enterprise FinTech Migration",
+  "year": "2026",
+  "order": 3,
   "accentColor": "#F59A00",
-  "tags": ["React", "TanStack Router", "GraphQL", "Framer Motion"],
+  "tags": [
+    "React 19",
+    "Tailwind 4",
+    "Shadcn UI",
+    "TanStack Router",
+    "Tanstack Query",
+    "Tanstack Form",
+    "Tanstack Table",
+    "WebSockets",
+    "Laravel 12",
+    "REST API",
+    "User access tokens",
+    "Github Copilot"
+  ],
+  "image": "/uploads/Skjermbilde-2026-09-23-175938.png",
+  "isPrivate": true,
   "descriptions": {
-    "en": "Podcast discovery app with visual waveform previews. Built a custom GraphQL layer over three separate podcast directory APIs.",
-    "es": "Aplicación de descubrimiento de podcasts con vistas previas visuales de forma de onda. Capa GraphQL personalizada sobre tres APIs de directorios de podcasts.",
-    "no": "Podkastoppdagelsesapp med visuelle bølgeformsforhåndsvisninger. Bygget et tilpasset GraphQL-lag over tre separate podkastkataloger."
+    "en": "Led the frontend architecture to modernize a massive enterprise accounting and hospitality system, decoupling a legacy CodeIgniter monolith into a separate React 19 and Laravel 12 application. I engineered a responsive, high-performance UI using Tailwind 4, shadcn/ui, and the TanStack ecosystem (Router, Query, Form, Table) to handle highly complex financial data. Additionally, I implemented WebSockets to enable real-time, zero-refresh communication between waiters and kitchen displays.\n\nSource code and interface designs are withheld as the platform is currently unreleased and protected by a non-disclosure agreement.",
+    "es": "Lideré la arquitectura frontend para modernizar un sistema masivo de contabilidad y hostelería, desacoplando un monolito heredado en CodeIgniter en una aplicación independiente con React 19 y Laravel 12. Diseñé una interfaz responsiva y de alto rendimiento utilizando Tailwind 4, shadcn/ui y el ecosistema TanStack (Router, Query, Form, Table) para gestionar datos financieros complejos. Además, implementé WebSockets para permitir la comunicación en tiempo real y sin recargas de página entre los camareros y las pantallas de la cocina.\n\nEl código fuente y los diseños de la interfaz no están disponibles públicamente, ya que la plataforma aún no se ha lanzado y está protegida por un acuerdo de confidencialidad.",
+    "no": "Ledet frontend-arkitekturen for å modernisere et omfattende regnskaps- og restaurantssystem, der en eldre CodeIgniter-monolitt ble splittet opp i en separat React 19- og Laravel 12-applikasjon. Jeg utviklet et responsivt og høytytende brukergrensesnitt med Tailwind 4, shadcn/ui og TanStack-økosystemet (Router, Query, Form, Table) for å håndtere svært komplekse finansdata. I tillegg implementerte jeg WebSockets for å muliggjøre sanntidskommunikasjon uten sideinnlasting mellom servitører og kjøkkenskjermer.\n\nKildekode og skjermbilder er ikke tilgjengelig, da plattformen foreløpig ikke er lansert og er underlagt en taushetserklæring."
   }
 }

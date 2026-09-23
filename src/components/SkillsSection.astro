@@ -74,7 +74,7 @@ const cards = services.map((svc, i) => ({
       <div class="grid md:grid-cols-3 gap-5">
         {cards.map((card, i) => {
           return (
-            <div class="border border-border bg-card rounded-sm overflow-hidden flex flex-col">
+            <div class="border border-border bg-card rounded-sx overflow-hidden flex flex-col">
               <div
                 class="h-1 shrink-0"
                 style={`background: ${card.color}`}
@@ -83,7 +83,7 @@ const cards = services.map((svc, i) => ({
               <div class="p-8 flex flex-col flex-1">
                 <!-- Icon -->
                 <div
-                  class="w-11 h-11 flex items-center justify-center mb-6 rounded-sm shrink-0"
+                  class="w-11 h-11 flex items-center justify-center mb-6 rounded-sx shrink-0"
                   style={`background: color-mix(in srgb, ${card.color} 18%, transparent)`}
                 >
                   {i === 0 && <CodeXml color={card.color} size="20" />}
@@ -113,7 +113,7 @@ const cards = services.map((svc, i) => ({
                 <div class="flex flex-wrap gap-1.5">
                   {card.tags.map((s) => (
                     <span
-                      class={`font-mono text-[10px] px-2.5 py-1 rounded-sm border ${TAG_STYLES[s.group ?? 0]}`}
+                      class={`font-mono text-[10px] px-2.5 py-1 rounded-sx border ${TAG_STYLES[s.group ?? 0]}`}
                       data-tina-field={tinaField(s, "name")}
                     >
                       {s.name}

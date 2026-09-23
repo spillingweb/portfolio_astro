@@ -13,10 +13,7 @@ export const T = {
     about: {
       label: "About",
       photoAlt: "Profile photo",
-      p1: "I run Spilling Web — a studio focused on building high-quality web applications for startups and growing products. I care about the craft as much as the code.",
-      p2: "My work lives at the crossroads of engineering and design. Performance, accessibility, and the small details that make users trust a product are not afterthoughts here — they're the job.",
-      p3: "TypeScript by default. Tests throughout. Shipped on time.",
-      cta: "Work with me",
+      heading: "Who I am",
     },
     skills: {
       label: "Skills & Tools",
@@ -66,9 +63,7 @@ export const T = {
     about: {
       label: "Sobre mí",
       photoAlt: "Foto de perfil",
-      p1: "Dirijo Spilling Web — un estudio enfocado en desarrollar aplicaciones web de alta calidad para startups y productos en crecimiento. Me importa tanto el oficio como el código.",
-      p2: "Mi trabajo vive en la intersección de la ingeniería y el diseño. El rendimiento, la accesibilidad y los pequeños detalles que hacen que los usuarios confíen en un producto no son reflexiones tardías — son el trabajo.",
-      p3: "TypeScript por defecto. Tests incluidos. Entregado a tiempo.",
+      heading: "Quién soy",
       cta: "Trabajemos juntos",
     },
     skills: {
@@ -133,10 +128,7 @@ export const T = {
     about: {
       label: "Om meg",
       photoAlt: "Profilbilde",
-      p1: "Jeg driver Spilling Web — et studio fokusert på å bygge høykvalitets webapplikasjoner for startups og voksende produkter. Jeg bryr meg om håndverket like mye som koden.",
-      p2: "Arbeidet mitt lever i skjæringspunktet mellom ingeniørfag og design. Ytelse, universell utforming og de små detaljene som får brukere til å stole på et produkt er ikke ettertanker her — det er selve jobben.",
-      p3: "TypeScript som standard. Tester gjennom hele. Levert i tide.",
-      cta: "Jobb med meg",
+      heading: "Hvem jeg er",
     },
     skills: {
       label: "Ferdigheter og verktøy",

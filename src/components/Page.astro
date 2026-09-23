@@ -89,9 +89,15 @@ const settings = settingsResult.data.settings;
   <!-- About section content -->
   <section id="about" class="py-28 bg-[#111118] text-white">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
-      <p class="font-mono text-xs uppercase tracking-[0.22em] text-white/30 mb-12">
+      <p class="font-mono text-xs uppercase tracking-[0.22em] text-white/30 mb-3">
         {t.about.label}
       </p>
+      <h2
+        class="font-heading font-black leading-[0.9] tracking-tight mb-16"
+        style="font-size: clamp(2rem, 5vw, 4rem)"
+      >
+        {t.about.heading}
+      </h2>
       <TinaIsland
         name="about"
         wrapper={islands.about.wrapper}
@@ -101,6 +107,9 @@ const settings = settingsResult.data.settings;
         <AboutSection
           about={aboutResult.data.about}
           photoAlt={t.about.photoAlt}
+          heading={t.about.heading}
+          label={t.about.label}
+          lang={lang}
         />
       </TinaIsland>
     </div>
@@ -164,9 +173,9 @@ const settings = settingsResult.data.settings;
           ].map((item) => (
             <a
               href={item.href}
-              class="flex items-center gap-4 bg-foreground text-background p-5 rounded-sm hover:bg-foreground/85 transition-colors group"
+              class="flex items-center gap-4 bg-foreground text-background p-5 rounded-sx hover:bg-foreground/85 transition-colors group"
             >
-              <div class="w-10 h-10 bg-primary flex items-center justify-center shrink-0 rounded-sm">
+              <div class="w-10 h-10 bg-primary flex items-center justify-center shrink-0 rounded-sx">
                 {item.icon}
               </div>
               <div class="min-w-0">
@@ -198,7 +207,7 @@ const settings = settingsResult.data.settings;
           <div class="pt-2">
             <a
               href={`mailto:${settings.email}`}
-              class="w-full flex items-center justify-center gap-2 bg-[#111118] text-white py-4 font-semibold rounded-sm hover:bg-[#111118]/85 transition-colors"
+              class="w-full flex items-center justify-center gap-2 bg-[#111118] text-white py-4 font-semibold rounded-sx hover:bg-[#111118]/85 transition-colors"
             >
               {t.contact.cta}
               <svg

@@ -1,0 +1,29 @@
+{
+  "url": "https://brottogblega.no",
+  "title": "Brott & Blega",
+  "year": "2026",
+  "order": 2,
+  "accentColor": "#FF3B6B",
+  "tags": [
+    "React 19",
+    "TypeScript",
+    "SEO",
+    "Tailwind 4",
+    "Tanstack Start",
+    "Shadcn UI",
+    "TinaCMS",
+    "Brevo",
+    "Vercel",
+    "Custom domain",
+    "Logo creation in Figma",
+    "Github Copilot"
+  ],
+  "image": "/uploads/SkjermbildeBrottogblega.png",
+  "githubUrl": "https://github.com/spillingweb/brottogblega",
+  "liveUrl": "https://brottogblega.no",
+  "descriptions": {
+    "en": "A clean, modern website for a holistic health practice combining physiotherapy and philosophical dialog therapy. Built for speed, seamless content management, and localized search visibility, the site features structured service listings, a blog, and a privacy-focused contact workflow integrated with Brevo—ensuring fully GDPR-compliant, EU-hosted communication.",
+    "es": "Sitio web moderno y veloz diseñado para una clínica de salud holística que combina fisioterapia y terapia de diálogo filosófico. Cuenta con navegación fluida, estructura optimizada para SEO y un formulario de contacto integrado con Brevo, garantizando el cumplimiento estricto del RGPD (GDPR) y el alojamiento seguro de datos dentro de la Unión Europea.",
+    "no": "En ren og moderne nettside for et helhetlig helsesenter som kombinerer fysioterapi og filosofisk samtaleterapi. Løsningen leverer lynrask ytelse, god synlighet i søkemotorer og et trygt kontaktskjema koblet mot Brevo. Dette sikrer at henvendelser behandles i full samsvar med GDPR på europeiske servere."
+  }
+}

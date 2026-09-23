@@ -1,4 +1,6 @@
 {
+  "heading": "Who I am",
+  "image": "/uploads/about.jpg",
   "lang": "en",
   "p1": "I’m a Norwegian web developer living in Ecuador, with a background in environmental science and a strong interest in building products that are useful, accessible, and easy to trust.",
   "p2": "My path into tech started in environmental technology, where I built a GIS-based web app for emissions monitoring and reporting. Since then, I’ve worked on business systems, client projects, and full-stack product work that combines strong UX with practical engineering.",

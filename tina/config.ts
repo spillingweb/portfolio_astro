@@ -101,6 +101,16 @@ export default defineConfig({
             list: true,
           },
           {
+            type: "image",
+            name: "image",
+            label: "Screenshot",
+            ui: { component: "image" },
+          },
+          { type: "image", name: "videoUrl", label: "Demo Video URL" },
+          { type: "string", name: "githubUrl", label: "GitHub URL" },
+          { type: "string", name: "liveUrl", label: "Live Site URL" },
+          { type: "boolean", name: "isPrivate", label: "Private project" },
+          {
             name: "descriptions",
             label: "Descriptions (per language)",
             type: "object",
@@ -143,6 +153,18 @@ export default defineConfig({
           },
         },
         fields: [
+          {
+            name: "heading",
+            label: "Heading",
+            type: "string",
+            required: true,
+          },
+          {
+            name: "image",
+            label: "Profile Image",
+            type: "image",
+            ui: { component: "image" },
+          },
           {
             name: "lang",
             label: "Language Code",
