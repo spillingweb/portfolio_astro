@@ -107,7 +107,12 @@
     {
       "name": "UI / UX",
       "group": 2
-    }
+    },
+    {
+      "name": "MySQL",
+      "group": 1
+    },
+    {}
   ],
   "services": [
     {
