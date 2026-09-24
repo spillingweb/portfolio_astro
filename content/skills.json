@@ -111,8 +111,7 @@
     {
       "name": "MySQL",
       "group": 1
-    },
-    {}
+    }
   ],
   "services": [
     {
