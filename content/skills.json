@@ -1,32 +1,113 @@
 {
   "items": [
-    { "name": "React", "group": 0 },
-    { "name": "TypeScript", "group": 0 },
-    { "name": "TanStack Ecosystem", "group": 0 },
-    { "name": "Astro", "group": 0 },
-    { "name": "Leaflet", "group": 0 },
-    { "name": "Turf.js", "group": 0 },
-    { "name": "CSS Modules", "group": 0 },
-    { "name": "Tailwind CSS", "group": 0 },
-    { "name": "Laravel", "group": 1 },
-    { "name": "Inertia.js", "group": 1 },
-    { "name": "PHP", "group": 1 },
-    { "name": "PostgreSQL", "group": 1 },
-    { "name": "PostGIS", "group": 1 },
-    { "name": "REST APIs", "group": 1 },
-    { "name": "Azure AD / Entra ID", "group": 1 },
-    { "name": "Git", "group": 2 },
-    { "name": "GitHub", "group": 2 },
-    { "name": "GitHub Actions", "group": 2 },
-    { "name": "GitHub Copilot", "group": 2 },
-    { "name": "VS Code", "group": 2 },
-    { "name": "Vite", "group": 2 },
-    { "name": "npm", "group": 2 },
-    { "name": "Jira", "group": 2 },
-    { "name": "Docker", "group": 2 },
-    { "name": "TinaCMS", "group": 2 },
-    { "name": "Figma", "group": 2 },
-    { "name": "UI / UX", "group": 2 }
+    {
+      "name": "React 19",
+      "group": 0
+    },
+    {
+      "name": "TypeScript",
+      "group": 0
+    },
+    {
+      "name": "TanStack Ecosystem",
+      "group": 0
+    },
+    {
+      "name": "Astro",
+      "group": 0
+    },
+    {
+      "name": "Leaflet",
+      "group": 0
+    },
+    {
+      "name": "Turf.js",
+      "group": 0
+    },
+    {
+      "name": "CSS Modules",
+      "group": 0
+    },
+    {
+      "name": "Tailwind CSS",
+      "group": 0
+    },
+    {
+      "name": "Laravel",
+      "group": 1
+    },
+    {
+      "name": "Inertia.js",
+      "group": 1
+    },
+    {
+      "name": "PHP",
+      "group": 1
+    },
+    {
+      "name": "PostgreSQL",
+      "group": 1
+    },
+    {
+      "name": "PostGIS",
+      "group": 1
+    },
+    {
+      "name": "REST APIs",
+      "group": 1
+    },
+    {
+      "name": "Azure AD / Entra ID",
+      "group": 1
+    },
+    {
+      "name": "Git",
+      "group": 2
+    },
+    {
+      "name": "GitHub",
+      "group": 2
+    },
+    {
+      "name": "GitHub Actions",
+      "group": 2
+    },
+    {
+      "name": "GitHub Copilot",
+      "group": 2
+    },
+    {
+      "name": "VS Code",
+      "group": 2
+    },
+    {
+      "name": "Vite",
+      "group": 2
+    },
+    {
+      "name": "npm",
+      "group": 2
+    },
+    {
+      "name": "Jira",
+      "group": 2
+    },
+    {
+      "name": "Docker",
+      "group": 2
+    },
+    {
+      "name": "TinaCMS",
+      "group": 2
+    },
+    {
+      "name": "Figma",
+      "group": 2
+    },
+    {
+      "name": "UI / UX",
+      "group": 2
+    }
   ],
   "services": [
     {
