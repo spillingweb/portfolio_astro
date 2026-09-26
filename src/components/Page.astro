@@ -5,13 +5,13 @@ import SkillsSection from "./SkillsSection.astro";
 import Layout from "../layouts/Layout.astro";
 import HeroNav from "./HeroNav";
 import FloatingMenu from "./FloatingMenu";
-import ProjectList from "./ProjectList";
 import type { Lang } from "../i18n/translations";
 import { T } from "../i18n/translations";
 import { islands } from "../lib/islands";
 import { getAbout, getProjects, getSkills, getSettings } from "../lib/data";
 import { GitHub, LinkedIn } from "../lib/socialIcons";
 import { ExternalLink, Mail } from "lucide-react";
+import ProjectList from "./ProjectList.astro";
 
 interface Props {
   lang: Lang;
@@ -73,9 +73,11 @@ const settings = settingsResult.data.settings;
       </div>
       <a
         href={settings.githubUrl ?? "#"}
+        target="_blank"
+        rel="noopener noreferrer"
         class="hidden md:flex items-center gap-2 text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors"
       >
-        {t.work.github}
+        GitHub
         <ExternalLink size="14" />
       </a>
     </div>
@@ -263,6 +265,8 @@ const settings = settingsResult.data.settings;
         ].map(({ href, icon }) => (
           <a
             href={href}
+            target="_blank"
+            rel="noopener noreferrer"
             class="text-muted-foreground hover:text-foreground transition-colors"
           >
             {icon === "github" && <GitHub size={16} color="currentcolor" />}

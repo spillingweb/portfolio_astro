@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { ArrowRight, ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
 import { tinaField } from "tinacms/dist/react";
 import type { ProjectConnectionQuery } from "../../tina/__generated__/types";
 import { GitHub } from "../lib/socialIcons";

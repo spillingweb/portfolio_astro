@@ -20,17 +20,17 @@ const LANGS = ["en", "es", "no"] as const;
 
 const SOCIALS = [
   {
-    href: "#",
+    href: "https://github.com/spillingweb",
     label: "GitHub",
     icon: () => <GitHub size={16} />,
   },
   {
-    href: "#",
+    href: "https://www.linkedin.com/in/khspilling",
     label: "LinkedIn",
     icon: () => <LinkedIn size={16} />,
   },
   {
-    href: "mailto:hello@spillingweb.dev",
+    href: "mailto:hello@spillingweb.com",
     label: "Email",
     icon: () => <Mail size={16} />,
   },
@@ -169,6 +169,8 @@ export default function FloatingMenu({
             <a
               key={label}
               href={href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-white/40 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium"
             >
               <Icon />

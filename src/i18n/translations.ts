@@ -123,7 +123,6 @@ export const T = {
     work: {
       label: "Utvalgte prosjekter",
       heading: "Nylige prosjekter",
-      github: "GitHub",
     },
     about: {
       label: "Om meg",
@@ -156,23 +155,5 @@ export const T = {
       cta: "Send en melding",
     },
     footer: "Laget med React og TypeScript.",
-    projects: [
-      {
-        description:
-          "Sanntids datavisualiseringsplattform for startups innen fornybar energi. Overvåker kraftproduksjon på tvers av 47 solinstallasjoner med oppdateringer under 100ms.",
-      },
-      {
-        description:
-          "Fellesskapsforumplattform bygget for nisjefellesskap. Trådede diskusjoner, sanntidsvarslinger og et moderasjonsdashboard.",
-      },
-      {
-        description:
-          "Interaktivt kart over utelivet i Oslo. Brukere merker steder, deler anmeldelser og oppdager arrangementer de neste 48 timene.",
-      },
-      {
-        description:
-          "Podkastoppdagelsesapp med visuelle bølgeformsforhåndsvisninger. Bygget et tilpasset GraphQL-lag over tre separate podkastkataloger.",
-      },
-    ],
   },
 } as const;

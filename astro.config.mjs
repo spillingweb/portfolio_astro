@@ -19,5 +19,10 @@ export default defineConfig({
     plugins: [tailwindcss(), tinaAdminDevRedirect()],
   },
 
-  adapter: vercel(),
+  adapter: vercel({
+    imageService: true
+  }),
+  image: {
+    domains: ["assets.tina.io"]
+  }
 });

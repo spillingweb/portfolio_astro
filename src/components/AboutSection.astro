@@ -1,7 +1,10 @@
 ---
 import { tinaField } from "@tinacms/astro/tina-field";
+import { Image } from "astro:assets";
 
 const { about, photoAlt } = Astro.props;
+
+const isRemote = about.image?.startsWith("http");
 ---
 
 <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
@@ -12,11 +15,19 @@ const { about, photoAlt } = Astro.props;
       aria-label={photoAlt}
     >
       <div class="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-primary rounded-tl-sm"></div>
-      <img
+      <Image
         src={about.image}
         alt={photoAlt}
+        inferSize={isRemote}
+        width={isRemote ? undefined : 800}
+        height={isRemote ? undefined : 1000}
+        widths={[400, 800, 1200]}
+        sizes="(max-width: 768px) 100vw, 800px"
         class="w-full h-full object-cover rounded-sx"
         data-tina-field={tinaField(about, "image")}
+        loading="lazy"
+        decoding="async"
+        format="webp"
       />
     </div>
     <div class="absolute -right-3 top-8 bottom-8 w-1.5 bg-primary hidden md:block rounded-full"></div>
