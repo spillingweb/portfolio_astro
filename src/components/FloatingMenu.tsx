@@ -17,6 +17,7 @@ interface Props {
 }
 
 const LANGS = ["en", "es", "no"] as const;
+const STORAGE_KEY = "preferred-language";
 
 const SOCIALS = [
   {
@@ -44,6 +45,12 @@ export default function FloatingMenu({
 }: Props) {
   const [showFloating, setShowFloating] = useState(false);
   const [overlayOpen, setOverlayOpen] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem(STORAGE_KEY, currentLang);
+    }
+  }, [currentLang]);
 
   useEffect(() => {
     const onScroll = () =>
@@ -102,6 +109,9 @@ export default function FloatingMenu({
                   )}
                   <a
                     href={langUrls[l]}
+                    onClick={() => {
+                      window.localStorage.setItem(STORAGE_KEY, l);
+                    }}
                     className={`font-mono text-[11px] uppercase tracking-wider transition-colors ${
                       currentLang === l
                         ? "text-white font-bold"

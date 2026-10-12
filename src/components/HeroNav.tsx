@@ -17,10 +17,17 @@ interface Props {
 }
 
 const LANGS = ["en", "es", "no"] as const;
+const STORAGE_KEY = "preferred-language";
 
 export default function HeroNav({ navItems, role, available, langUrls, currentLang }: Props) {
   const [hoveredNav, setHoveredNav] = useState<number | null>(null);
   const [isTouch, setIsTouch] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem(STORAGE_KEY, currentLang);
+    }
+  }, [currentLang]);
 
   useEffect(() => {
     const mq = window.matchMedia("(hover: none)");
@@ -44,6 +51,9 @@ export default function HeroNav({ navItems, role, available, langUrls, currentLa
                 {i > 0 && <span className="text-[10px] text-foreground/20">·</span>}
                 <a
                   href={langUrls[l]}
+                  onClick={() => {
+                    window.localStorage.setItem(STORAGE_KEY, l);
+                  }}
                   className={`font-mono text-[11px] uppercase tracking-wider transition-colors ${
                     currentLang === l
                       ? "text-foreground font-bold"

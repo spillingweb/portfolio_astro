@@ -2,7 +2,7 @@ export type Lang = "en" | "es" | "no";
 
 export const T = {
   en: {
-    role: "React Developer",
+    role: "Full-stack Developer",
     available: "Open to projects",
     nav: { work: "Work", about: "About", skills: "Skills", contact: "Contact" },
     work: {
@@ -47,7 +47,7 @@ export const T = {
     ],
   },
   es: {
-    role: "Desarrollador React",
+    role: "Desarrollador Full-stack",
     available: "Disponible para proyectos",
     nav: {
       work: "Proyectos",
@@ -112,7 +112,7 @@ export const T = {
     ],
   },
   no: {
-    role: "React-utvikler",
+    role: "Full-stack utvikler",
     available: "Åpen for prosjekter",
     nav: {
       work: "Arbeid",

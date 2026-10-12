@@ -1,3 +1,19 @@
----
-return Astro.redirect("/en");
----
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <script is:inline>
+      (() => {
+        const key = "preferred-language";
+        const languages = ["en", "es", "no"];
+        const savedLanguage = localStorage.getItem(key);
+        const preferredLanguage =
+          savedLanguage && languages.includes(savedLanguage) ? savedLanguage : "en";
+
+        window.location.replace(`/${preferredLanguage}`);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

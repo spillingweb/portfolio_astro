@@ -6,10 +6,12 @@ import vercel from "@astrojs/vercel";
 import tina from "@tinacms/astro/integration";
 import { tinaAdminDevRedirect } from "@tinacms/astro/vite";
 
-// https://astro.build/config
+import sitemap from "@astrojs/sitemap";
+
 export default defineConfig({
+  site: "https://spillingweb.com",
   output: "server",
-  integrations: [react(), tina()],
+  integrations: [react(), tina(), sitemap()],
   i18n: {
     defaultLocale: "en",
     locales: ["en", "es", "no"],
