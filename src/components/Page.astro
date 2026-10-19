@@ -12,6 +12,7 @@ import { getAbout, getProjects, getSkills, getSettings } from "../lib/data";
 import { GitHub, LinkedIn } from "../lib/socialIcons";
 import { ExternalLink, Mail } from "lucide-react";
 import ProjectList from "./ProjectList.astro";
+import ContactSection from "./ContactSection.astro";
 
 interface Props {
   lang: Lang;
@@ -23,9 +24,9 @@ const langUrls = { en: "/en", es: "/es", no: "/no" };
 
 const NAV_COLORS = [
   { color: "var(--color-pink)", textColor: "white", href: "#work" },
-  { color: "#F59A00", textColor: "#111118", href: "#about" },
-  { color: "var(--color-accent)", textColor: "#111118", href: "#skills" },
-  { color: "#1A0A2E", textColor: "white", href: "#contact" },
+  { color: "var(--color-accent)", textColor: "#111118", href: "#about" },
+  { color: "var(--color-primary)", textColor: "white", href: "#skills" },
+  { color: "#F59A00", textColor: "#111118", href: "#contact" },
 ];
 
 const navItems = NAV_COLORS.map((n, i) => ({
@@ -56,187 +57,87 @@ const settings = settingsResult.data.settings;
     <div class="bg-primary"></div>
     <div class="bg-accent"></div>
   </div>
+  <main>
+    <!-- WORK -->
+    <section id="work" class="py-28 max-w-7xl mx-auto px-6 md:px-12">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+        <div>
+          <p class="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground mb-3">
+            {t.work.label}
+          </p>
+          <h2
+            class="font-heading font-black leading-[0.9] tracking-tight"
+            style="font-size: clamp(2rem, 5vw, 4rem)"
+          >
+            {t.work.heading}
+          </h2>
+        </div>
+        <a
+          href={settings.githubUrl ?? "#"}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hidden md:flex items-center gap-2 text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors"
+        >
+          GitHub
+          <ExternalLink size="14" />
+        </a>
+      </div>
+      <ProjectList
+        client:visible
+        edges={projectsResult.data.projectConnection.edges}
+        lang={lang}
+      />
+    </section>
 
-  <!-- WORK -->
-  <section id="work" class="py-28 max-w-7xl mx-auto px-6 md:px-12">
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
-      <div>
-        <p class="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground mb-3">
-          {t.work.label}
+    <!-- About section content -->
+    <section id="about" class="py-28 bg-[#111118] text-white">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <p class="font-mono text-xs uppercase tracking-[0.22em] text-muted mb-3">
+          {t.about.label}
         </p>
         <h2
-          class="font-heading font-black leading-[0.9] tracking-tight"
+          class="font-heading font-black leading-[0.9] tracking-tight mb-16"
           style="font-size: clamp(2rem, 5vw, 4rem)"
         >
-          {t.work.heading}
+          {t.about.heading}
         </h2>
+        <TinaIsland
+          name="about"
+          wrapper={islands.about.wrapper}
+          params={{ lang }}
+          primary
+        >
+          <AboutSection
+            about={aboutResult.data.about}
+            photoAlt={t.about.photoAlt}
+            heading={t.about.heading}
+            label={t.about.label}
+            lang={lang}
+          />
+        </TinaIsland>
       </div>
-      <a
-        href={settings.githubUrl ?? "#"}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="hidden md:flex items-center gap-2 text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors"
-      >
-        GitHub
-        <ExternalLink size="14" />
-      </a>
-    </div>
-    <ProjectList
-      client:visible
-      edges={projectsResult.data.projectConnection.edges}
-      lang={lang}
-    />
-  </section>
+    </section>
 
-  <!-- About section content -->
-  <section id="about" class="py-28 bg-[#111118] text-white">
-    <div class="max-w-7xl mx-auto px-6 md:px-12">
-      <p class="font-mono text-xs uppercase tracking-[0.22em] text-white/30 mb-3">
-        {t.about.label}
-      </p>
-      <h2
-        class="font-heading font-black leading-[0.9] tracking-tight mb-16"
-        style="font-size: clamp(2rem, 5vw, 4rem)"
-      >
-        {t.about.heading}
-      </h2>
-      <TinaIsland
-        name="about"
-        wrapper={islands.about.wrapper}
-        params={{ lang }}
-        primary
-      >
-        <AboutSection
-          about={aboutResult.data.about}
-          photoAlt={t.about.photoAlt}
-          heading={t.about.heading}
-          label={t.about.label}
-          lang={lang}
-        />
-      </TinaIsland>
-    </div>
-  </section>
-
-  <!-- Skills section content -->
-  <section id="skills" class="py-28 max-w-7xl mx-auto px-6 md:px-12">
-    <SkillsSection
-      skills={skillsResult.data.skills}
-      label={t.skills.label}
-      heading={t.skills.heading}
-      lang={lang}
-    />
-  </section>
+    <!-- Skills section content -->
+    <section id="skills" class="py-28 max-w-7xl mx-auto px-6 md:px-12">
+      <SkillsSection
+        skills={skillsResult.data.skills}
+        label={t.skills.label}
+        heading={t.skills.heading}
+        lang={lang}
+      />
+    </section>
+  </main>
 
   <!-- CONTACT -->
   <section id="contact" class="py-28 bg-pink">
-    <div class="max-w-7xl mx-auto px-6 md:px-12">
-      <div class="grid md:grid-cols-2 gap-16 items-center">
-        <div>
-          <p class="font-mono text-xs uppercase tracking-[0.22em] text-foreground/40 mb-4">
-            {t.contact.label}
-          </p>
-          <h2
-            class="font-heading font-black leading-[0.88] tracking-tight text-foreground whitespace-pre-line"
-            style="font-size: clamp(3rem, 7vw, 6rem)"
-          >
-            {t.contact.heading}
-          </h2>
-          <p class="text-foreground/65 text-lg leading-relaxed max-w-sm mt-6">
-            {t.contact.body}
-          </p>
-          <div class="mt-8 flex items-center gap-3">
-            <span class="w-2 h-2 rounded-full bg-[#22c55e] animate-pulse"></span>
-            <span class="font-mono text-xs text-foreground/60">
-              {t.contact.availability}
-            </span>
-          </div>
-        </div>
-
-        <div class="space-y-3">
-          {[
-            {
-              icon: <Mail size={16} />,
-              label: "Email",
-              value: settings.email,
-              href: `mailto:${settings.email}`,
-            },
-            {
-              icon: <GitHub size={16} />,
-              label: "GitHub",
-              value: (settings.githubUrl ?? "#").replace("https://", ""),
-              href: settings.githubUrl ?? "#",
-            },
-            {
-              icon: <LinkedIn size={16} />,
-              label: "LinkedIn",
-              value: (settings.linkedinUrl ?? "#").replace("https://", ""),
-              href: settings.linkedinUrl ?? "#",
-            },
-          ].map((item) => (
-            <a
-              href={item.href}
-              class="flex items-center gap-4 bg-foreground text-background p-5 rounded-sx hover:bg-foreground/85 transition-colors group"
-            >
-              <div class="w-10 h-10 bg-primary flex items-center justify-center shrink-0 rounded-sx">
-                {item.icon}
-              </div>
-              <div class="min-w-0">
-                <p class="font-mono text-[10px] text-white/40 uppercase tracking-wider mb-0.5">
-                  {item.label}
-                </p>
-                <p class="font-semibold text-sm truncate">{item.value}</p>
-              </div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="17"
-                height="17"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="ml-auto text-white/25 group-hover:translate-x-1 transition-transform shrink-0"
-              >
-                <>
-                  <path d="M5 12h14" />
-                  <path d="m12 5 7 7-7 7" />
-                </>
-              </svg>
-            </a>
-          ))}
-
-          <div class="pt-2">
-            <a
-              href={`mailto:${settings.email}`}
-              class="w-full flex items-center justify-center gap-2 bg-[#111118] text-white py-4 font-semibold rounded-sx hover:bg-[#111118]/85 transition-colors"
-            >
-              {t.contact.cta}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <ContactSection settings={settings} t={t} />
   </section>
 
   <!-- FOOTER -->
   <footer class="border-t border-border py-8 bg-background">
     <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="font-heading font-bold text-sm">{settings.studioName}</p>
+      <h3 class="font-heading font-bold text-sm">{settings.studioName}</h3>
       <p class="font-mono text-[11px] text-muted-foreground text-center">
         © 2026 {settings.studioName}. {t.footer}
       </p>
@@ -268,6 +169,7 @@ const settings = settingsResult.data.settings;
             target="_blank"
             rel="noopener noreferrer"
             class="text-muted-foreground hover:text-foreground transition-colors"
+            aria-label={icon}
           >
             {icon === "github" && <GitHub size={16} color="currentcolor" />}
             {icon === "linkedin" && <LinkedIn size={16} color="currentcolor" />}

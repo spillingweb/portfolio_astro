@@ -11,12 +11,14 @@
   --color-card: #ffffff;
   --color-primary: #8b1fff;
   --color-primary-foreground: #ffffff;
-  --color-pink: #ff3b6b;
+  --color-primary-background: #8b1fff;
+  --color-pink: oklch(58.6% 0.253 17.585);
   --color-muted: #f0eee8;
   --color-muted-foreground: #6e6e80;
   --color-border: rgba(17, 17, 24, 0.1);
   --color-accent: #00b896;
   --color-accent-foreground: #111118;
+  --color-accent-background: oklch(98.4% 0.014 180.72);
 
   --radius: 0.25rem;
 }

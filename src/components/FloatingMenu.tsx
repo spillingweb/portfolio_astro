@@ -23,12 +23,12 @@ const SOCIALS = [
   {
     href: "https://github.com/spillingweb",
     label: "GitHub",
-    icon: () => <GitHub size={16} />,
+    icon: () => <GitHub size={16} color="currentcolor" />,
   },
   {
     href: "https://www.linkedin.com/in/khspilling",
     label: "LinkedIn",
-    icon: () => <LinkedIn size={16} />,
+    icon: () => <LinkedIn size={16} color="currentcolor" />,
   },
   {
     href: "mailto:hello@spillingweb.com",
@@ -93,10 +93,10 @@ export default function FloatingMenu({
       >
         <div className="flex items-center justify-between px-6 md:px-12 py-5 border-b border-white/10 shrink-0">
           <div>
-            <p className="font-heading font-black text-base text-white tracking-tight">
+            <h2 className="font-heading font-black text-base text-white tracking-tight">
               Spilling Web
-            </p>
-            <p className="font-mono text-[10px] text-white/30 uppercase tracking-[0.18em] mt-0.5">
+            </h2>
+            <p className="font-mono text-[10px] text-white/80 uppercase tracking-[0.18em] mt-0.5">
               {role}
             </p>
           </div>
@@ -105,7 +105,7 @@ export default function FloatingMenu({
               {LANGS.map((l, i) => (
                 <span key={l} className="flex items-center gap-1">
                   {i > 0 && (
-                    <span className="text-[10px] text-white/20">·</span>
+                    <span className="text-[10px] text-white/80">·</span>
                   )}
                   <a
                     href={langUrls[l]}
@@ -115,7 +115,7 @@ export default function FloatingMenu({
                     className={`font-mono text-[11px] uppercase tracking-wider transition-colors ${
                       currentLang === l
                         ? "text-white font-bold"
-                        : "text-white/35 hover:text-white/70"
+                        : "text-white/80 hover:text-white"
                     }`}
                   >
                     {l.toUpperCase()}
@@ -133,7 +133,7 @@ export default function FloatingMenu({
           </div>
         </div>
 
-        <nav className="flex-1 flex flex-col divide-y divide-white/10 overflow-hidden">
+        <nav aria-label="floating menu" className="flex-1 flex flex-col divide-y divide-white/10 overflow-hidden">
           {navItems.map((item, i) => (
             <a
               key={item.href}
@@ -142,7 +142,7 @@ export default function FloatingMenu({
               className="flex-1 flex items-center justify-between px-6 md:px-12 group"
             >
               <div className="flex items-baseline gap-6 md:gap-10">
-                <span className="font-mono text-xs text-white/20 w-6 shrink-0">
+                <span className="font-mono text-xs text-white/80 w-6 shrink-0">
                   0{i + 1}
                 </span>
                 <span
@@ -168,7 +168,7 @@ export default function FloatingMenu({
               </div>
               <ArrowUpRight
                 size={24}
-                className="shrink-0 text-white/20 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-200"
+                className="shrink-0 text-white/60 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-200"
               />
             </a>
           ))}
@@ -181,7 +181,7 @@ export default function FloatingMenu({
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/40 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium"
+              className="text-white/60 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium"
             >
               <Icon />
               <span className="hidden sm:inline">{label}</span>
