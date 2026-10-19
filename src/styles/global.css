@@ -1,10 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800;12..96,900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
-
+/* @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800;12..96,900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"); */
+@import "@fontsource-variable/bricolage-grotesque";
+@import "@fontsource-variable/jetbrains-mono";
+@import "@fontsource-variable/plus-jakarta-sans";
 @import "tailwindcss";
 
 @theme {
-  --font-heading: "Bricolage Grotesque", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-heading: "Bricolage Grotesque Variable", sans-serif;
+  --font-mono: "JetBrains Mono Variable", monospace;
+  --font-sans: "Plus Jakarta Sans Variable", sans-serif;
 
   --color-background: #fafaf8;
   --color-foreground: #111118;
@@ -25,7 +28,7 @@
 
 @layer base {
   body {
-    font-family: "Plus Jakarta Sans", sans-serif;
+    font-family: var(--font-sans);
     background-color: #fafaf8;
     color: #111118;
     overflow-x: hidden;
@@ -35,6 +38,6 @@
   h2,
   h3,
   h4 {
-    font-family: "Bricolage Grotesque", sans-serif;
+    font-family: var(--font-heading);
   }
 }

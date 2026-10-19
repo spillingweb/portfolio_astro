@@ -141,7 +141,7 @@ export default function FloatingMenu({
               onClick={() => setOverlayOpen(false)}
               className="flex-1 flex items-center justify-between px-6 md:px-12 group"
             >
-              <div className="flex items-baseline gap-6 md:gap-10">
+              <div className="flex items-baseline gap-3 lg:gap-6 md:gap-10">
                 <span className="font-mono text-xs text-white/80 w-6 shrink-0">
                   0{i + 1}
                 </span>
@@ -153,11 +153,7 @@ export default function FloatingMenu({
                     className="inline-block transition-all duration-200"
                     style={
                       {
-                        WebkitTextStroke: `2px ${
-                          item.color === "#1A0A2E"
-                            ? "var(--color-pink)"
-                            : item.color
-                        }`,
+                        WebkitTextStroke: `2px ${item.color}`,
                         color: "inherit",
                       } as React.CSSProperties
                     }
