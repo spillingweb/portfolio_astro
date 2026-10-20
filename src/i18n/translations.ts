@@ -1,6 +1,34 @@
 export type Lang = "en" | "es" | "no";
 
-export const T = {
+interface Section {
+  label: string;
+  heading: string;
+}
+
+export interface Translations {
+  role: string;
+  available: string;
+  nav: {
+    work: string;
+    about: string;
+    skills: string;
+    contact: string;
+  };
+  work: Section;
+  about: Section & {
+    photoAlt: string;
+    cta?: string;
+  };
+  skills: Section;
+  contact: Section & {
+    body: string;
+    availability: string;
+    cta: string;
+  };
+  footer: string;
+}
+
+export const T: Record<Lang, Translations> = {
   en: {
     role: "Full-stack Developer",
     available: "Open to projects",
@@ -8,7 +36,6 @@ export const T = {
     work: {
       label: "Selected Work",
       heading: "Recent Projects",
-      github: "GitHub",
     },
     about: {
       label: "About",
@@ -26,28 +53,10 @@ export const T = {
       availability: "Open to new projects",
       cta: "Send a message",
     },
-    footer: "Crafted with React & TypeScript.",
-    projects: [
-      {
-        description:
-          "Real-time data viz platform for renewable energy startups. Monitors power output across 47 solar installations with sub-100ms refresh rates.",
-      },
-      {
-        description:
-          "Community forum platform built for niche creator communities. Threaded discussions, real-time notifications, and a moderation dashboard.",
-      },
-      {
-        description:
-          "Interactive city nightlife map for Oslo. Users pin venues, share reviews, and discover events happening within the next 48 hours.",
-      },
-      {
-        description:
-          "Podcast discovery app with visual waveform previews. Built a custom GraphQL layer over three separate podcast directory APIs.",
-      },
-    ],
+    footer: "Crafted with Astro & React.",
   },
   es: {
-    role: "Desarrollador Full-stack",
+    role: "Desarrolladora Full-stack",
     available: "Disponible para proyectos",
     nav: {
       work: "Proyectos",
@@ -58,7 +67,6 @@ export const T = {
     work: {
       label: "Trabajo selecto",
       heading: "Proyectos recientes",
-      github: "GitHub",
     },
     about: {
       label: "Sobre mí",
@@ -69,20 +77,6 @@ export const T = {
     skills: {
       label: "Habilidades y herramientas",
       heading: "El Stack",
-      services: [
-        {
-          title: "Desarrollo Frontend",
-          desc: "React, Next.js, TanStack. Arquitectura de componentes, gestión de estado, optimización de rendimiento y accesibilidad — construido para durar.",
-        },
-        {
-          title: "Desarrollo Full-Stack",
-          desc: "Node.js, GraphQL, PostgreSQL, Supabase. Diseño de APIs, sistemas de autenticación, modelado de bases de datos y pipelines de despliegue.",
-        },
-        {
-          title: "Implementación UI / UX",
-          desc: "De Figma a producción con precisión píxel. Animaciones, diseño responsive, mapas interactivos con Leaflet y sistemas de diseño.",
-        },
-      ],
     },
     contact: {
       label: "Hablemos",
@@ -91,25 +85,7 @@ export const T = {
       availability: "Abierto a nuevos proyectos",
       cta: "Enviar un mensaje",
     },
-    footer: "Creado con React y TypeScript.",
-    projects: [
-      {
-        description:
-          "Plataforma de visualización en tiempo real para startups de energía renovable. Monitorea la producción de 47 instalaciones solares con actualizaciones de menos de 100ms.",
-      },
-      {
-        description:
-          "Plataforma de foros comunitarios para comunidades de creadores de nicho. Discusiones en hilo, notificaciones en tiempo real y panel de moderación.",
-      },
-      {
-        description:
-          "Mapa interactivo de vida nocturna para Oslo. Los usuarios marcan locales, comparten reseñas y descubren eventos en las próximas 48 horas.",
-      },
-      {
-        description:
-          "Aplicación de descubrimiento de podcasts con vistas previas visuales de forma de onda. Capa GraphQL personalizada sobre tres APIs de directorios de podcasts.",
-      },
-    ],
+    footer: "Creado con Astro y React.",
   },
   no: {
     role: "Full-stack utvikler",
@@ -132,20 +108,6 @@ export const T = {
     skills: {
       label: "Ferdigheter og verktøy",
       heading: "Teknologi-stacken",
-      services: [
-        {
-          title: "Frontend-utvikling",
-          desc: "React, Next.js, TanStack. Komponentarkitektur, tilstandshåndtering, ytelsesoptimalisering og universell utforming — bygget for å vare.",
-        },
-        {
-          title: "Full-Stack-utvikling",
-          desc: "Node.js, GraphQL, PostgreSQL, Supabase. API-design, autentiseringssystemer, databasemodellering og utrullingspipelines.",
-        },
-        {
-          title: "UI / UX-implementering",
-          desc: "Pikselpresis fra Figma til produksjon. Animasjoner, responsivt design, interaktive kart med Leaflet og designsystemer.",
-        },
-      ],
     },
     contact: {
       label: "La oss snakke",
@@ -154,6 +116,6 @@ export const T = {
       availability: "Åpen for nye prosjekter",
       cta: "Send en melding",
     },
-    footer: "Laget med React og TypeScript.",
+    footer: "Laget med Astro og React.",
   },
 } as const;

@@ -13,6 +13,7 @@ import { GitHub, LinkedIn } from "../lib/socialIcons";
 import { ExternalLink, Mail } from "lucide-react";
 import ProjectList from "./ProjectList.astro";
 import ContactSection from "./ContactSection.astro";
+import type { About, Project, Settings, Skills } from "../../tina/__generated__/types";
 
 interface Props {
   lang: Lang;
@@ -40,9 +41,15 @@ const skillsResult = await getSkills();
 const settingsResult = await getSettings();
 
 const settings = settingsResult.data.settings;
+
+const description = settings.descriptions?.[lang] ?? "";
 ---
 
-<Layout title={`${settings.studioName} — ${t.role}`} lang={lang}>
+<Layout
+  title={`${settings.studioName} — ${t.role}`}
+  description={description}
+  lang={lang}
+>
   <HeroNav
     client:load
     navItems={navItems}
@@ -84,7 +91,7 @@ const settings = settingsResult.data.settings;
       </div>
       <ProjectList
         client:visible
-        edges={projectsResult.data.projectConnection.edges}
+        projectsData={projectsResult.data}
         lang={lang}
       />
     </section>
@@ -108,11 +115,8 @@ const settings = settingsResult.data.settings;
           primary
         >
           <AboutSection
-            about={aboutResult.data.about}
+            about={aboutResult.data.about as About}
             photoAlt={t.about.photoAlt}
-            heading={t.about.heading}
-            label={t.about.label}
-            lang={lang}
           />
         </TinaIsland>
       </div>
@@ -121,7 +125,7 @@ const settings = settingsResult.data.settings;
     <!-- Skills section content -->
     <section id="skills" class="py-28 max-w-7xl mx-auto px-6 md:px-12">
       <SkillsSection
-        skills={skillsResult.data.skills}
+        skills={skillsResult.data.skills as Skills}
         label={t.skills.label}
         heading={t.skills.heading}
         lang={lang}
@@ -131,7 +135,7 @@ const settings = settingsResult.data.settings;
 
   <!-- CONTACT -->
   <section id="contact" class="py-28 bg-pink">
-    <ContactSection settings={settings} t={t} />
+    <ContactSection settings={settings as Settings} t={t} />
   </section>
 
   <!-- FOOTER -->

@@ -28,10 +28,12 @@
 
 @layer base {
   body {
+    @apply antialiased selection:bg-primary/80 selection:text-white;
     font-family: var(--font-sans);
     background-color: #fafaf8;
     color: #111118;
     overflow-x: hidden;
+
   }
 
   h1,

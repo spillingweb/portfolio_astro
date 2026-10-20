@@ -3,5 +3,10 @@
   "email": "hello@spillingweb.com",
   "githubUrl": "https://github.com/spillingweb",
   "linkedinUrl": "https://linkedin.com/in/khspilling",
-  "available": true
+  "available": true,
+  "descriptions": {
+    "en": "I design and build modern, high-performance web applications with a full-stack mindset and strong product-focused UX.",
+    "es": "Diseño y desarrollo aplicaciones web modernas y de alto rendimiento con una mentalidad full-stack y una experiencia de usuario enfocada en resultados.",
+    "no": "Jeg designer og bygger moderne, høyytelses webapplikasjoner med full-stack tilnærming og fokus på god brukeropplevelse og produktverdi."
+  }
 }

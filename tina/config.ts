@@ -29,8 +29,7 @@ export default defineConfig({
         format: "json",
         match: { include: "settings" },
         ui: {
-          allowedActions: { create: false, delete: false },
-          router: () => "/en",
+          global: true,
         },
         fields: [
           {
@@ -39,6 +38,7 @@ export default defineConfig({
             type: "string",
             required: true,
           },
+
           {
             name: "email",
             label: "Contact Email",
@@ -51,6 +51,32 @@ export default defineConfig({
             name: "available",
             label: "Available for new projects",
             type: "boolean",
+          },
+          {
+            name: "descriptions",
+            label: "Descriptions (per language)",
+            type: "object",
+            fields: [
+              {
+                name: "en",
+                label: "English",
+                type: "string",
+                required: true,
+                ui: { component: "textarea" },
+              },
+              {
+                name: "es",
+                label: "Spanish",
+                type: "string",
+                ui: { component: "textarea" },
+              },
+              {
+                name: "no",
+                label: "Norwegian",
+                type: "string",
+                ui: { component: "textarea" },
+              },
+            ],
           },
         ],
       },

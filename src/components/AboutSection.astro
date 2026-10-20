@@ -1,6 +1,12 @@
 ---
 import { tinaField } from "@tinacms/astro/tina-field";
 import { Image } from "astro:assets";
+import type { About } from "../../tina/__generated__/types";
+
+interface Props {
+  about: About;
+  photoAlt: string;
+}
 
 const { about, photoAlt } = Astro.props;
 
@@ -11,24 +17,38 @@ const isRemote = about.image?.startsWith("http");
   <!-- Profile photo -->
   <div class="relative">
     <div
-      class="aspect-3/4 w-full max-w-sm mx-auto md:mx-0 bg-white/5 border border-white/10 rounded-sx flex flex-col items-center justify-center gap-4"
+      class="aspect-3/4 w-full max-w-sm mx-auto md:mx-0 bg-white/5 border border-white/10 rounded-xs flex flex-col items-center justify-center gap-4"
       aria-label={photoAlt}
     >
       <div class="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-primary rounded-tl-sm"></div>
-      <Image
-        src={about.image}
-        alt={photoAlt}
-        inferSize={isRemote}
-        width={isRemote ? undefined : 800}
-        height={isRemote ? undefined : 1000}
-        widths={[400, 800, 1200]}
-        sizes="(max-width: 768px) 100vw, 800px"
-        class="w-full h-full object-cover rounded-sx"
-        data-tina-field={tinaField(about, "image")}
-        loading="lazy"
-        decoding="async"
-        format="webp"
-      />
+      {isRemote ? (
+        <Image
+          src={about.image || ""}
+          alt={photoAlt}
+          inferSize={true}
+          widths={[400, 800, 1200]}
+          sizes="(max-width: 768px) 100vw, 800px"
+          class="w-full h-full object-cover rounded-xs"
+          data-tina-field={tinaField(about, "image")}
+          loading="lazy"
+          decoding="async"
+          format="webp"
+        />
+      ) : (
+        <Image
+          src={about.image || ""}
+          alt={photoAlt}
+          width={800}
+          height={1000}
+          widths={[400, 800, 1200]}
+          sizes="(max-width: 768px) 100vw, 800px"
+          class="w-full h-full object-cover rounded-xs"
+          data-tina-field={tinaField(about, "image")}
+          loading="lazy"
+          decoding="async"
+          format="webp"
+        />
+      )}
     </div>
     <div class="absolute -right-3 top-8 bottom-8 w-1.5 bg-primary hidden md:block rounded-full"></div>
   </div>
@@ -60,7 +80,7 @@ const isRemote = about.image?.startsWith("http");
     <div class="pt-4">
       <a
         href="#contact"
-        class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3.5 font-semibold rounded-sx hover:bg-[#7A1AE8] transition-colors"
+        class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3.5 font-semibold rounded-xs hover:bg-[#7A1AE8] transition-colors"
         data-tina-field={tinaField(about, "cta")}
       >
         {about.cta}

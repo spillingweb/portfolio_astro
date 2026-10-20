@@ -1,6 +1,13 @@
 ---
 import { Mail } from "lucide-react";
 import { GitHub, LinkedIn } from "../lib/socialIcons";
+import type { Settings } from "../../tina/__generated__/types";
+import type { Lang, Translations } from "../i18n/translations";
+
+interface Props {
+  settings: Settings;
+  t: Translations;
+}
 
 const { settings, t } = Astro.props;
 ---
@@ -51,9 +58,9 @@ const { settings, t } = Astro.props;
       ].map((item) => (
         <a
           href={item.href}
-          class="flex items-center gap-4 bg-foreground text-background p-5 rounded-sx hover:bg-foreground/85 transition-colors group"
+          class="flex items-center gap-4 bg-foreground text-background p-5 rounded-xs hover:bg-foreground/85 transition-colors group"
         >
-          <div class="w-10 h-10 bg-primary flex items-center justify-center shrink-0 rounded-sx">
+          <div class="w-10 h-10 bg-primary flex items-center justify-center shrink-0 rounded-xs">
             {item.icon}
           </div>
           <div class="min-w-0">
@@ -85,7 +92,7 @@ const { settings, t } = Astro.props;
       <div class="pt-2">
         <a
           href={`mailto:${settings.email}`}
-          class="w-full flex items-center justify-center gap-2 bg-[#111118] text-white py-4 font-semibold rounded-sx hover:bg-[#111118]/85 transition-colors"
+          class="w-full flex items-center justify-center gap-2 bg-[#111118] text-white py-4 font-semibold rounded-xs hover:bg-[#111118]/85 transition-colors"
         >
           {t.contact.cta}
           <svg
