@@ -48,8 +48,11 @@ export default function HeroNav({
 
   return (
     <section className="min-h-screen flex flex-col border-b border-border">
-      <header className="flex items-center justify-between px-6 md:px-12 py-5 border-b border-border shrink-0 gap-4">
+      <header className="flex items-center px-6 md:px-12 py-5 border-b border-border shrink-0 gap-4">
         <div>
+          <img src="/favicon.svg" alt="Logo" className="h-8 w-8" />
+        </div>
+        <div className="flex-1">
           <h2 className="font-heading font-black text-base tracking-tight">
             Spilling Web
           </h2>
