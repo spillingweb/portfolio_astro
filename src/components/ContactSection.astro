@@ -1,5 +1,5 @@
 ---
-import { Mail } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import { GitHub, LinkedIn } from "../lib/socialIcons";
 import type { Settings } from "../../tina/__generated__/types";
 import type { Lang, Translations } from "../i18n/translations";
@@ -58,18 +58,21 @@ const { settings, t } = Astro.props;
       ].map((item) => (
         <a
           href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
           class="flex items-center gap-4 bg-foreground text-background p-5 rounded-xs hover:bg-foreground/85 transition-colors group"
         >
           <div class="w-10 h-10 bg-primary flex items-center justify-center shrink-0 rounded-xs">
             {item.icon}
           </div>
-          <div class="min-w-0">
+          <div class="min-w-0 flex-1">
             <p class="font-mono text-[10px] text-white/80 uppercase tracking-wider mb-0.5">
               {item.label}
             </p>
             <p class="font-semibold text-sm truncate">{item.value}</p>
           </div>
-          <svg
+          <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform text-muted-foreground" />
+          {/* <svg
             xmlns="http://www.w3.org/2000/svg"
             width="17"
             height="17"
@@ -85,7 +88,7 @@ const { settings, t } = Astro.props;
               <path d="M5 12h14" />
               <path d="m12 5 7 7-7 7" />
             </>
-          </svg>
+          </svg> */}
         </a>
       ))}
 

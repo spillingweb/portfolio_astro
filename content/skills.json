@@ -117,43 +117,43 @@
     {
       "en": {
         "title": "Frontend",
-        "desc": "Modern, user-focused interfaces for web apps and interactive web maps, built with React, TypeScript, Astro, and the TanStack ecosystem. I care about clean architecture, responsive layouts, solid performance, and UX that feels effortless."
+        "desc": "Modern, user-focused interfaces for web apps and interactive web maps, built with React, TypeScript, Tailwind CSS, Astro, and the TanStack ecosystem. I care about clean architecture, responsive layouts, accessibility, solid performance, and UX that feels effortless. My products should score close to 100 % on Lighthouse audits."
       },
       "es": {
         "title": "Frontend",
-        "desc": "Interfaces modernas y centradas en el usuario para aplicaciones web y mapas interactivos, construidas con React, TypeScript, Astro y el ecosistema TanStack. Me interesa la arquitectura limpia, layouts responsivos, buen rendimiento y una UX que se sienta natural."
+        "desc": "Interfaces modernas y centradas en el usuario para aplicaciones web y mapas interactivos, construidas con React, TypeScript, Tailwind CSS, Astro y el ecosistema TanStack. Me interesa la arquitectura limpia, layouts responsivos, accesibilidad, buen rendimiento y una UX que se sienta natural. Mis productos deben obtener un resultado cercano al 100 % en las auditorías de Lighthouse."
       },
       "no": {
         "title": "Frontend",
-        "desc": "Moderne, brukerorienterte grensesnitt for webapplikasjoner og interaktive webkart, bygget med React, TypeScript, Astro og TanStack-økosystemet. Jeg fokuserer på ren arkitektur, responsivt design, god ytelse og UX som føles naturlig."
+        "desc": "Moderne, brukerorienterte grensesnitt for webapplikasjoner og interaktive webkart, bygget med React, TypeScript, Tailwind CSS, Astro og TanStack-økosystemet. Jeg fokuserer på ren arkitektur, responsivt design, tilgjengelighet, god ytelse og UX som føles naturlig. Produktene mine skal score nær 100 % på Lighthouse-audits."
       }
     },
     {
       "en": {
         "title": "Backend",
-        "desc": "Practical full-stack engineering for business logic, data flows, and secure application workflows. I build reliable APIs, connect the frontend to real systems, and keep production features maintainable and stable."
+        "desc": "Practical full-stack engineering for business logic, data flows, and secure application workflows. I build reliable APIs, connect the frontend to real systems, and keep production features maintainable and stable. Laravel is my go-to framework for backend development, and Tanstack Start for simpler projects."
       },
       "es": {
         "title": "Backend",
-        "desc": "Ingeniería full-stack práctica para lógica de negocio, flujo de datos y flujos seguros de la aplicación. Construyo APIs confiables, conecto el frontend con sistemas reales y mantengo funciones de producción estables y mantenibles."
+        "desc": "Ingeniería full-stack práctica para lógica de negocio, flujo de datos y flujos seguros de la aplicación. Construyo APIs confiables, conecto el frontend con sistemas reales y mantengo funciones de producción estables y mantenibles. Laravel es mi framework preferido para desarrollo backend, y Tanstack Start para proyectos más simples."
       },
       "no": {
         "title": "Backend",
-        "desc": "Praktisk full-stack-utvikling for forretningslogikk, dataflyter og sikre applikasjonsflyter. Jeg bygger pålitelige API-er, kobler frontend til reelle systemer og holder produksjonsfunksjoner vedlikeholdbare og stabile."
+        "desc": "Praktisk full-stack-utvikling for forretningslogikk, dataflyter og sikre applikasjonsflyter. Jeg bygger pålitelige API-er, kobler frontend til reelle systemer og holder produksjonsfunksjoner vedlikeholdbare og stabile. Laravel er mitt foretrukne rammeverk for backend-utvikling, og Tanstack Start for enklere prosjekter."
       }
     },
     {
       "en": {
         "title": "Tools",
-        "desc": "A modern workflow built for shipping efficiently: version control, automation, collaboration, and content tooling that helps keep projects moving without sacrificing quality."
+        "desc": "I follow a modern workflow built for shipping efficiently: version control, automation, collaboration, and content tooling that helps keep projects moving without sacrificing quality. This approach ensures that I can deliver high-quality work consistently and adapt to changing project requirements."
       },
       "es": {
         "title": "Herramientas",
-        "desc": "Un flujo de trabajo moderno pensado para entregar con eficiencia: control de versiones, automatización, colaboración y herramientas de contenido que mantienen los proyectos avanzando sin sacrificar calidad."
+        "desc": "Sigo un flujo de trabajo moderno pensado para entregar con eficiencia: control de versiones, automatización, colaboración y herramientas de contenido que mantienen los proyectos avanzando sin sacrificar calidad. Este enfoque asegura que pueda entregar trabajo de alta calidad de manera consistente y adaptarme a los requisitos cambiantes del proyecto."
       },
       "no": {
         "title": "Verktøy",
-        "desc": "En moderne arbeidsflyt bygget for effektiv levering: versjonskontroll, automatisering, samarbeid og innholdsverktøy som holder prosjekter i fart uten å gå på bekostning av kvalitet."
+        "desc": "Jeg følger en moderne arbeidsflyt bygget for effektiv levering: versjonskontroll, automatisering, samarbeid og innholdsverktøy som holder prosjekter i fart uten å gå på bekostning av kvalitet. Denne tilnærmingen sikrer at jeg kan levere arbeid av høy kvalitet konsekvent og tilpasse meg endrede prosjektkrav."
       }
     }
   ]
