@@ -96,7 +96,7 @@ export default function FloatingMenu({
             <h2 className="font-heading font-black text-base text-white tracking-tight">
               Spilling Web
             </h2>
-            <p className="font-mono text-[10px] text-white/80 uppercase tracking-[0.18em] mt-0.5">
+            <p className="font-mono text-[9px] text-white/80 uppercase tracking-[0.18em] mt-0.5">
               {role}
             </p>
           </div>

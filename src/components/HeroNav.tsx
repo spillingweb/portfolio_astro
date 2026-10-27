@@ -56,7 +56,7 @@ export default function HeroNav({
           <h2 className="font-heading font-black text-base tracking-tight">
             Spilling Web
           </h2>
-          <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-[0.18em] mt-0.5">
+          <p className="font-mono text-[9px] text-muted-foreground uppercase tracking-[0.18em] mt-0.5">
             {role}
           </p>
         </div>

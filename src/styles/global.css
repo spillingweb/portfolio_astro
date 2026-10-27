@@ -79,7 +79,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .reveal-on-scroll,
-  .anim-appear-left {
+  .anim-appear-left,
+  .anim-appear-right {
     animation: none;
     opacity: 1;
     transform: none;
@@ -87,6 +88,10 @@
 }
 
 @layer base {
+  html {
+    overflow-x: hidden;
+  }
+
   body {
     @apply antialiased selection:bg-primary/80 selection:text-white;
     font-family: var(--font-sans);
