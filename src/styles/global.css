@@ -23,20 +23,76 @@
   --color-accent-background: oklch(98.4% 0.014 180.72);
 
   --radius: 0.25rem;
+
+  @keyframes reveal-up {
+    from {
+      opacity: 0;
+      transform: translateY(10rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes appear-left {
+    from {
+      opacity: 0;
+      transform: translateX(-10rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes appear-right {
+    from {
+      opacity: 0;
+      transform: translateX(10rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+@utility reveal-on-scroll {
+  animation: reveal-up linear both;
+  animation-timeline: view();
+  animation-range-start: calc(0% + (var(--index, 0) * 10%));
+  animation-range-end: calc(20% + (var(--index, 0) * 10%));
+}
+
+@utility anim-appear-left {
+  animation: appear-left cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 55%;
+}
+
+@utility anim-appear-right {
+  animation: appear-right ease-in-out both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll,
+  .anim-appear-left {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-  
   body {
     @apply antialiased selection:bg-primary/80 selection:text-white;
     font-family: var(--font-sans);
     background-color: #fafaf8;
     color: #111118;
     overflow-x: hidden;
-
   }
 
   h1,

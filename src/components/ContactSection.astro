@@ -3,6 +3,7 @@ import { ArrowRight, Mail } from "lucide-react";
 import { GitHub, LinkedIn } from "../lib/socialIcons";
 import type { Settings } from "../../tina/__generated__/types";
 import type { Lang, Translations } from "../i18n/translations";
+import ButtonLink from "./ButtonLink";
 
 interface Props {
   settings: Settings;
@@ -15,11 +16,11 @@ const { settings, t } = Astro.props;
 <div class="max-w-7xl mx-auto px-6 md:px-12">
   <div class="grid md:grid-cols-2 gap-16 items-center">
     <div>
-      <p class="font-mono text-xs uppercase tracking-[0.22em] text-white mb-4">
+      <p class="font-mono text-xs uppercase tracking-[0.22em] text-white mb-4 anim-appear-left">
         {t.contact.label}
       </p>
       <h2
-        class="font-heading font-black leading-[0.88] tracking-tight text-white whitespace-pre-line"
+        class="font-heading font-black leading-[0.88] tracking-tight text-white whitespace-pre-line anim-appear-left"
         style="font-size: clamp(3rem, 7vw, 6rem)"
       >
         {t.contact.heading}
@@ -60,7 +61,7 @@ const { settings, t } = Astro.props;
           href={item.href}
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center gap-4 bg-foreground text-background p-5 rounded-xs hover:bg-foreground/85 transition-colors group"
+          class="flex items-center gap-4 bg-foreground text-background p-5 rounded-xs hover:bg-foreground/85 transition-colors group anim-appear-right"
         >
           <div class="w-10 h-10 bg-primary flex items-center justify-center shrink-0 rounded-xs">
             {item.icon}
@@ -71,48 +72,17 @@ const { settings, t } = Astro.props;
             </p>
             <p class="font-semibold text-sm truncate">{item.value}</p>
           </div>
-          <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform text-muted-foreground" />
-          {/* <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="17"
-            height="17"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="ml-auto text-white/25 group-hover:translate-x-1 transition-transform shrink-0"
-          >
-            <>
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </>
-          </svg> */}
+          <ArrowRight
+            size={16}
+            className="group-hover:translate-x-1 transition-transform text-muted-foreground"
+          />
         </a>
       ))}
 
       <div class="pt-2">
-        <a
-          href={`mailto:${settings.email}`}
-          class="w-full flex items-center justify-center gap-2 bg-[#111118] text-white py-4 font-semibold rounded-xs hover:bg-[#111118]/85 transition-colors"
-        >
+        <ButtonLink href={`mailto:${settings.email}`} withArrow variant="secondary">
           {t.contact.cta}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M5 12h14"></path>
-            <path d="m12 5 7 7-7 7"></path>
-          </svg>
-        </a>
+        </ButtonLink>
       </div>
     </div>
   </div>

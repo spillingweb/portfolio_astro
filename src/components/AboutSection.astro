@@ -2,103 +2,77 @@
 import { tinaField } from "@tinacms/astro/tina-field";
 import { Image } from "astro:assets";
 import type { About } from "../../tina/__generated__/types";
+import TinaIsland from "@tinacms/astro/TinaIsland.astro";
+import TinaMarkdown from "@tinacms/astro/TinaMarkdown.astro";
+import { islands } from "../lib/islands";
+import { ArrowRight } from "lucide-react";
+import ButtonLink from "./ButtonLink";
 
 interface Props {
   about: About;
   photoAlt: string;
+  lang: "en" | "es" | "no";
 }
 
-const { about, photoAlt } = Astro.props;
+const { about, photoAlt, lang } = Astro.props;
 
 const isRemote = about.image?.startsWith("http");
 ---
 
-<div class="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
-  <!-- Profile photo -->
-  <div class="relative">
-    <div
-      class="aspect-3/4 w-full max-w-sm mx-auto md:mx-0 bg-white/5 border border-white/10 rounded-xs flex flex-col items-center justify-center gap-4"
-      aria-label={photoAlt}
-    >
-      <div class="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-primary rounded-tl-sm"></div>
-      {isRemote ? (
-        <Image
-          src={about.image || ""}
-          alt={photoAlt}
-          inferSize={true}
-          widths={[400, 800, 1200]}
-          sizes="(max-width: 768px) 100vw, 800px"
-          class="w-full h-full object-cover rounded-xs"
-          data-tina-field={tinaField(about, "image")}
-          loading="lazy"
-          decoding="async"
-          format="webp"
-        />
-      ) : (
-        <Image
-          src={about.image || ""}
-          alt={photoAlt}
-          width={800}
-          height={1000}
-          widths={[400, 800, 1200]}
-          sizes="(max-width: 768px) 100vw, 800px"
-          class="w-full h-full object-cover rounded-xs"
-          data-tina-field={tinaField(about, "image")}
-          loading="lazy"
-          decoding="async"
-          format="webp"
-        />
-      )}
+<TinaIsland name="about" wrapper={islands.about.wrapper} params={{ lang }}>
+  <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-start mt-16">
+    <!-- Profile photo -->
+    <div class="relative">
+      <div
+        class="aspect-3/4 w-full max-w-sm mx-auto md:mx-0 bg-white/5 border border-white/10 rounded-xs flex flex-col items-center justify-center gap-4 reveal-on-scroll"
+        aria-label={photoAlt}
+      >
+        <div class="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-primary rounded-tl-sm" />
+        {isRemote ? (
+          <Image
+            src={about.image || ""}
+            alt={photoAlt}
+            inferSize={true}
+            widths={[400, 800, 1200]}
+            sizes="(max-width: 768px) 100vw, 800px"
+            class="w-full h-full object-cover rounded-xs"
+            data-tina-field={tinaField(about, "image")}
+            loading="lazy"
+            decoding="async"
+            format="webp"
+          />
+        ) : (
+          <Image
+            src={about.image || ""}
+            alt={photoAlt}
+            width={800}
+            height={1000}
+            widths={[400, 800, 1200]}
+            sizes="(max-width: 768px) 100vw, 800px"
+            class="w-full h-full object-cover rounded-xs"
+            data-tina-field={tinaField(about, "image")}
+            loading="lazy"
+            decoding="async"
+            format="webp"
+          />
+        )}
+      </div>
+      <div class="absolute -right-3 top-8 bottom-8 w-1.5 bg-primary hidden md:block rounded-full"></div>
     </div>
-    <div class="absolute -right-3 top-8 bottom-8 w-1.5 bg-primary hidden md:block rounded-full"></div>
-  </div>
 
-  <!-- Editable text -->
-  <div class="space-y-6 md:pt-4">
-    <p
-      class="text-white/75 leading-relaxed text-lg"
-      data-tina-field={tinaField(about, "p1")}
-    >
-      {about.p1}
-    </p>
-    {about.p2 && (
-      <p
-        class="text-white/60 leading-relaxed"
-        data-tina-field={tinaField(about, "p2")}
+    <!-- Editable text -->
+    <div class="space-y-6 md:flex md:flex-col md:justify-center h-full anim-appear-right">
+      <div
+        class="flex flex-col gap-4 leading-relaxed [&>*:first-child]:text-white/75 [&>*:first-child]:text-lg text-white/60"
+        data-tina-field={tinaField(about, "content")}
       >
-        {about.p2}
-      </p>
-    )}
-    {about.p3 && (
-      <p
-        class="text-white/60 leading-relaxed"
-        data-tina-field={tinaField(about, "p3")}
-      >
-        {about.p3}
-      </p>
-    )}
-    <div class="pt-4">
-      <a
-        href="#contact"
-        class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3.5 font-semibold rounded-xs hover:bg-[#7A1AE8] transition-colors"
-        data-tina-field={tinaField(about, "cta")}
-      >
-        {about.cta}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path d="M5 12h14" />
-          <path d="m12 5 7 7-7 7" />
-        </svg>
-      </a>
+        <TinaMarkdown content={about.content} />
+      </div>
+      <div class="pt-4 w-fit">
+        <ButtonLink href="#contact" withArrow>
+          {about.cta}
+        </ButtonLink>
+      </div>
     </div>
   </div>
-</div>
+</TinaIsland>

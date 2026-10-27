@@ -5,23 +5,17 @@ interface Props {
   title: string;
   lang: string;
   description?: string;
-  image?: string;
-  canonicalURL?: string;
 }
 
 const {
   title,
   lang,
   description = "Spilling Web — Full-stack developer building accessible, understandable and production ready digital experiences.",
-  image = "/favicon.svg",
-  canonicalURL,
 } = Astro.props;
 
 const site = Astro.site ?? new URL("https://spillingweb.com/");
-const normalizedCanonical = canonicalURL
-  ? new URL(canonicalURL, site).toString()
-  : new URL(Astro.url.pathname, site).toString();
-const socialImage = new URL(image, site).toString();
+const normalizedCanonical = new URL(Astro.url.pathname, site).toString();
+const socialImage = new URL("favicon.svg", site).toString();
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Person",

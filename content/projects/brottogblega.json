@@ -2,7 +2,7 @@
   "url": "https://brottogblega.no",
   "title": "Brott & Blega",
   "year": "2026",
-  "order": 2,
+  "order": 1,
   "accentColor": "#FF3B6B",
   "tags": [
     "React 19",

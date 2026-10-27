@@ -100,19 +100,17 @@ export default function HeroNav({
                 className="relative flex-1 flex items-center px-6 md:px-12 overflow-hidden group"
               >
                 <div
-                  className="absolute inset-0 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:scale-y-100 scale-y-0 origin-bottom"
+                  className="absolute inset-0 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:scale-x-100 scale-x-0 origin-left"
                   style={{
                     background: item.color,
                   }}
                 />
-                {isTouch && (
-                  <div
-                    className="absolute left-0 top-3 bottom-3 w-1.5 rounded-full"
-                    style={{ background: item.color }}
-                  />
-                )}
+                <div
+                  className="absolute left-0 top-0 bottom-0 w-1.5"
+                  style={{ background: item.color }}
+                />
                 <div className="relative z-10 flex items-center justify-between w-full gap-4">
-                  <div className="flex items-baseline gap-6 md:gap-10">
+                  <div className="flex items-baseline gap-4 sm:gap-6 md:gap-10">
                     <span
                       className={`font-mono text-xs md:text-sm transition-colors duration-300 shrink-0 w-6 text-muted-foreground ${item.textColor === "white" ? "group-hover:text-primary-foreground" : "group-hover:text-foreground"}`}
                     >

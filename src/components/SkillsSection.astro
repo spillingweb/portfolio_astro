@@ -4,6 +4,7 @@ import TinaIsland from "@tinacms/astro/TinaIsland.astro";
 import { islands } from "../lib/islands";
 import { CodeXml, Layers, Zap } from "lucide-react";
 import type { Skills } from "../../tina/__generated__/types";
+import TinaMarkdown from "@tinacms/astro/TinaMarkdown.astro";
 
 const SKILLS_STYLES = [
   {
@@ -22,92 +23,77 @@ const SKILLS_STYLES = [
 
 interface Props {
   skills: Skills;
-  label: string;
-  heading: string;
   lang: "en" | "es" | "no";
 }
 
-const { skills, label, heading, lang } = Astro.props;
+const { skills, lang } = Astro.props;
 
 const services = (skills.services ?? []).filter((s) => s !== null);
 const items = (skills.items ?? []).filter((s) => s !== null);
 ---
 
 <TinaIsland name="skills" wrapper={islands.skills.wrapper} params={{ lang }}>
-  {
-    <>
-      <p class="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground mb-3">
-        {label}
-      </p>
-      <h2
-        class="font-heading font-black leading-[0.9] tracking-tight mb-16"
-        style="font-size: clamp(2rem, 5vw, 4rem)"
-      >
-        {heading}
-      </h2>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-16">
+    {services.map((s, i) => {
+      if (!s[lang]) return null;
+      const service = s[lang];
+      const styles = SKILLS_STYLES[i];
+      return (
+        <div
+          class={`border border-border bg-card rounded-xs overflow-hidden flex flex-col ${i === 0 && "sm:max-lg:col-span-2"} reveal-on-scroll`}
+          style={{ "--index": i }}
+        >
+          <div
+            class="h-1 shrink-0"
+            style={`background: ${styles.background}`}
+          ></div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {services.map((s, i) => {
-          if (!s[lang]) return null;
-          const service = s[lang];
-          const styles = SKILLS_STYLES[i];
-          return (
+          <div class="p-8 flex flex-col flex-1">
+            <!-- Icon -->
             <div
-              class={`border border-border bg-card rounded-xs overflow-hidden flex flex-col ${i === 0 && "sm:max-lg:col-span-2"}`}
+              class="w-11 h-11 flex items-center justify-center mb-6 rounded-xs shrink-0"
+              style={`background: color-mix(in srgb, ${styles.background} 18%, transparent)`}
             >
-              <div
-                class="h-1 shrink-0"
-                style={`background: ${styles.background}`}
-              ></div>
-
-              <div class="p-8 flex flex-col flex-1">
-                <!-- Icon -->
-                <div
-                  class="w-11 h-11 flex items-center justify-center mb-6 rounded-xs shrink-0"
-                  style={`background: color-mix(in srgb, ${styles.background} 18%, transparent)`}
-                >
-                  {i === 0 && <CodeXml color={styles.background} size="20" />}
-                  {i === 1 && <Layers color={styles.background} size="20" />}
-                  {i === 2 && <Zap color={styles.background} size="20" />}
-                </div>
-
-                <!-- Title -->
-                <h3
-                  class="font-heading font-bold text-xl mb-3"
-                  data-tina-field={tinaField(service, "title")}
-                >
-                  {service.title}
-                </h3>
-
-                <!-- Description -->
-                <p
-                  class="text-sm text-muted-foreground leading-relaxed"
-                  data-tina-field={tinaField(service, "desc")}
-                >
-                  {service?.desc}
-                </p>
-                <!-- Spacer pushes tags to bottom -->
-                <div class="flex-1 min-h-6"></div>
-
-                <!-- Skill tags — same color as card -->
-                <div class="flex flex-wrap gap-1.5">
-                  {items.map((item) => {
-                    if (item.group !== i) return null;
-                    return (
-                      <span
-                        class={`font-mono text-[10px] px-2.5 py-1 rounded-xs border ${styles.tagStyle}`}
-                        data-tina-field={tinaField(item, "name")}
-                      >
-                        {item.name}
-                      </span>
-                    );
-                  })}
-                </div>
-              </div>
+              {i === 0 && <CodeXml color={styles.background} size="20" />}
+              {i === 1 && <Layers color={styles.background} size="20" />}
+              {i === 2 && <Zap color={styles.background} size="20" />}
             </div>
-          );
-        })}
-      </div>
-    </>
-  }
+
+            <!-- Title -->
+            <h3
+              class="font-heading font-bold text-xl mb-3"
+              data-tina-field={tinaField(service, "title")}
+            >
+              {service.title}
+            </h3>
+
+            <!-- Description -->
+            <div
+              class="text-sm text-muted-foreground leading-relaxed"
+              data-tina-field={tinaField(service, "desc")}
+            >
+              <TinaMarkdown content={service.desc} />
+            </div>
+            <!-- Spacer pushes tags to bottom -->
+            <div class="flex-1 min-h-6"></div>
+
+            <!-- Skill tags — same color as card -->
+            <div class="flex flex-wrap gap-1.5">
+              {items.map((item) => {
+                if (item.group !== i) return null;
+                return (
+                  <span
+                    class={`font-mono text-[10px] px-2.5 py-1 rounded-xs border ${styles.tagStyle}`}
+                    data-tina-field={tinaField(item, "name")}
+                  >
+                    {item.name}
+                  </span>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      );
+    })}
+  </div>
 </TinaIsland>

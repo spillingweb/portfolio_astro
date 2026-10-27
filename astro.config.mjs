@@ -19,12 +19,14 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss(), tinaAdminDevRedirect()],
+    build: {
+      cssMinify: "esbuild",
+    },
   },
-
   adapter: vercel({
-    imageService: true
+    imageService: true,
   }),
   image: {
-    domains: ["assets.tina.io"]
-  }
+    domains: ["assets.tina.io"],
+  },
 });

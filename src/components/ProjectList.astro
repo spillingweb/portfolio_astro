@@ -2,13 +2,9 @@
 import { Image } from "astro:assets";
 import { ExternalLink } from "lucide-react";
 import { tinaField } from "tinacms/dist/react";
-import type {
-  Project,
-  ProjectConnectionQuery,
-} from "../../tina/__generated__/types";
+import type { ProjectConnectionQuery } from "../../tina/__generated__/types";
 import { GitHub } from "../lib/socialIcons";
 import type { Lang } from "../i18n/translations";
-import { Debug } from "astro:components";
 import TinaIsland from "@tinacms/astro/TinaIsland.astro";
 import { islands } from "../lib/islands";
 
@@ -19,9 +15,9 @@ interface Props {
 
 const { projectsData, lang } = Astro.props;
 
-const ACCENT_COLORS = ["#E8F5E9", "#FCE4EC", "#E3F2FD", "#FFF8E1", "#F3E5F5"];
-
-const projects = projectsData?.projectConnection?.edges;
+const projects = projectsData?.projectConnection?.edges?.sort(
+  (a, b) => (a?.node?.order || 0) - (b?.node?.order || 0),
+);
 ---
 
 <TinaIsland
@@ -30,22 +26,24 @@ const projects = projectsData?.projectConnection?.edges;
   params={{ lang }}
   primary
 >
-  <div class="mt-12 grid lg:grid-cols-2 gap-5">
+  <div class="grid gap-5">
     {projects?.map((p, i) => {
       const project = p?.node;
       if (!project) return null;
       const description =
         project.descriptions?.[lang] ?? project.descriptions?.en ?? "";
-      const accentColor =
-        project.accentColor || ACCENT_COLORS[i % ACCENT_COLORS.length];
+      const accentColor = project.accentColor;
 
       return (
-        <div class="group border border-border bg-card rounded-xs overflow-hidden flex flex-col hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+        <div class="group border border-border bg-card rounded-xs overflow-hidden flex flex-col lg:flex-row hover:-translate-y-1 hover:shadow-xl transition-all duration-300 reveal-on-scroll">
           {/* Accent bar */}
-          <div class="h-0.75 shrink-0" style={{ background: accentColor }} />
+          <div
+            class="h-0.75 lg:h-full lg:w-1.5 shrink-0"
+            style={{ background: accentColor }}
+          />
 
           {/* Media */}
-          <div class="relative overflow-hidden" style={{ height: "300px" }}>
+          <div class="relative overflow-hidden lg:max-w-[50%] h-80 lg:h-auto">
             {project.image ? (
               <Image
                 src={project.image}
@@ -109,7 +107,10 @@ const projects = projectsData?.projectConnection?.edges;
             <div class="flex flex-wrap gap-1.5 mb-4">
               {project.tags &&
                 project.tags.map((tag) => (
-                  <span class="font-mono text-[10px] px-2 py-0.5 rounded-xs bg-foreground/5 text-muted-foreground border border-border" data-tina-field={tinaField(project, "tags")}>
+                  <span
+                    class="font-mono text-[10px] px-2 py-0.5 rounded-xs bg-foreground/5 text-muted-foreground border border-border"
+                    data-tina-field={tinaField(project, "tags")}
+                  >
                     {tag}
                   </span>
                 ))}

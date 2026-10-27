@@ -1,16 +1,14 @@
 import type { IslandRegistry } from "@tinacms/astro/experimental";
-import AboutSection from "../components/AboutSection.astro";
-import ProjectList from "../components/ProjectListStatic.astro";
-import SkillsSection from "../components/SkillsSection.astro";
 import { getAbout, getProjects, getSkills } from "./data";
 import type { QueryResult } from "@tinacms/astro/data";
 import type {
   AboutQuery,
-  ProjectConnection,
   ProjectQuery,
-  Skills,
   SkillsQuery,
 } from "../../tina/__generated__/types";
+import AboutSection from "../components/AboutSection.astro";
+import ProjectList from "../components/ProjectList.astro";
+import SkillsSection from "../components/SkillsSection.astro";
 
 export const islands: IslandRegistry = {
   about: {
