@@ -23,7 +23,7 @@
   --color-accent-background: oklch(98.4% 0.014 180.72);
 
   --radius: 0.25rem;
-/* 
+
   @keyframes reveal-up {
     from {
       opacity: 0;
@@ -38,7 +38,7 @@
   @keyframes appear-left {
     from {
       opacity: 0;
-      transform: translateX(-10rem);
+      transform: translateX(-2rem);
     }
     to {
       opacity: 1;
@@ -49,15 +49,15 @@
   @keyframes appear-right {
     from {
       opacity: 0;
-      transform: translateX(10rem);
+      transform: translateX(2rem);
     }
     to {
       opacity: 1;
       transform: translateX(0);
     }
-  } */
+  }
 }
-/* 
+
 @utility reveal-on-scroll {
   animation: reveal-up linear both;
   animation-timeline: view();
@@ -85,13 +85,9 @@
     opacity: 1;
     transform: none;
   }
-} */
+}
 
 @layer base {
-  /* html {
-    overflow-x: hidden;
-  } */
-
   body {
     @apply antialiased selection:bg-primary/80 selection:text-white;
     font-family: var(--font-sans);

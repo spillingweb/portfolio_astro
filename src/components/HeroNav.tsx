@@ -47,7 +47,7 @@ export default function HeroNav({
   };
 
   return (
-    <section className="min-h-screen flex flex-col border-b border-border">
+    <section className="min-h-dvh flex flex-col border-b border-border">
       <header className="flex items-center px-6 md:px-12 py-5 border-b border-border shrink-0 gap-4">
         <div>
           <img src="/favicon.svg" alt="Logo" className="h-8 w-8" />
