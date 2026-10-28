@@ -66,6 +66,7 @@ const alternateLanguages = [
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="canonical" href={normalizedCanonical} />
+    <link rel="manifest" href="/manifest.json" />
     {alternateLanguages.map((link) => (
       <link rel="alternate" hreflang={link.lang} href={link.href} />
     ))}

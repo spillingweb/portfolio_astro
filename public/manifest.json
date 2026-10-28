@@ -1,0 +1,8 @@
+{
+  "name": "Spilling Web - Full Stack Developer",
+  "short_name": "Spilling Web",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fafaf8",
+  "theme_color": "#8b1fff"
+}
